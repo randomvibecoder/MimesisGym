@@ -14,7 +14,8 @@ RUN apt-get update \
        numpy \
        opencv-python-headless \
        pillow \
-       scikit-image
+       scikit-image \
+       sympy
 
 COPY docker/image/guest_tools.py /opt/mimesis/guest_tools.py
 

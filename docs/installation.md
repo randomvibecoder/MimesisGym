@@ -21,7 +21,7 @@ Build the agent environment:
 mimesisgym sandbox build
 ```
 
-The image includes Pillow, aggdraw, NumPy, OpenCV, Matplotlib, scikit-image, and FFmpeg with H.264 encoding, so evaluated agents do not need to install rendering packages.
+The image includes Pillow, aggdraw, NumPy, OpenCV, Matplotlib, scikit-image, SymPy, and FFmpeg with H.264 encoding, so evaluated agents do not need to install rendering or motion-fitting packages.
 
 ## Run your first task
 
@@ -77,7 +77,7 @@ The compatible adapter uses Chat Completions. The default OpenAI adapter uses th
 
 ## Episode limits
 
-The defaults are 10 model turns, 40 tool calls, 6,000 output tokens per response, 24,000 total output tokens, and 20 minutes. Override them with:
+Image defaults are 10 model turns, 40 tool calls, 6,000 output tokens per response, 24,000 total output tokens, and 20 minutes. Video allows 15 turns, 50 tool calls, and 30,000 total output tokens because agents may inspect several extracted frames before submission. Override them with:
 
 ```text
 --max-turns

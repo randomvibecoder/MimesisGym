@@ -6,17 +6,36 @@ The Video track asks a multimodal agent to reconstruct a short animation from fi
 
 ## Baseline snapshot
 
-| Reference | GPT-5.6 Luna reconstruction |
-| --- | --- |
-| [Watch the elastic-bounce reference](../../../benchmarks/video/samples/seed_v1/elastic-bounce.mp4) | [Watch the Luna-low reconstruction](../../assets/video/elastic-bounce-luna-low.mp4) |
+### Elastic wall bounce
 
-The first end-to-end baseline used GPT-5.6 Luna with low reasoning. It submitted a valid video after 54 seconds, seven turns, seven tool calls, and 1,734 output tokens.
+![Elastic-bounce reference, GPT-5.4 reconstruction, and GPT-5.6 Luna reconstruction](../../assets/video/elastic-bounce-comparison.gif)
 
-| Model | Hidden-frame match | Visible-frame match | Final reward | Submitted |
+[Reference MP4](../../../benchmarks/video/samples/seed_v1/elastic-bounce.mp4) · [GPT-5.4 MP4](../../assets/video/elastic-bounce-gpt-5.4-low.mp4) · [GPT-5.6 Luna MP4](../../assets/video/elastic-bounce-luna-low.mp4)
+
+### Constant horizontal motion
+
+![Constant-motion reference, GPT-5.4 reconstruction, and GPT-5.6 Luna reconstruction](../../assets/video/constant-horizontal-comparison.gif)
+
+[Reference MP4](../../../benchmarks/video/samples/seed_v1/constant-horizontal.mp4) · [GPT-5.4 MP4](../../assets/video/constant-horizontal-gpt-5.4-low.mp4) · [GPT-5.6 Luna MP4](../../assets/video/constant-horizontal-luna-low.mp4)
+
+### Gravity-accelerated fall
+
+![Gravity-fall reference, GPT-5.4 reconstruction, and GPT-5.6 Luna reconstruction](../../assets/video/gravity-fall-comparison.gif)
+
+[Reference MP4](../../../benchmarks/video/samples/seed_v1/gravity-fall.mp4) · [GPT-5.4 MP4](../../assets/video/gravity-fall-gpt-5.4-low.mp4) · [GPT-5.6 Luna MP4](../../assets/video/gravity-fall-luna-low.mp4)
+
+Both models used low reasoning through the OpenAI Responses API. Every published episode had a fresh context, fresh offline 2 GB container, and the same limits: 15 turns, 50 tool calls, 6,000 output tokens per turn, 30,000 total output tokens, and 20 minutes. Both models submitted all three videos.
+
+| Task | GPT-5.4 match | GPT-5.4 final | Luna match | Luna final |
 | --- | ---: | ---: | ---: | ---: |
-| GPT-5.6 Luna, low | **0.9316** | 0.9597 | 0.9170 | Yes |
+| Elastic wall bounce | 0.9273 | 0.8971 | **0.9517** | **0.9380** |
+| Constant horizontal | **0.9836** | 0.9647 | 0.9819 | **0.9717** |
+| Gravity fall | 0.9164 | 0.8857 | **0.9262** | **0.9141** |
+| **Mean** | 0.9425 | 0.9158 | **0.9532** | **0.9413** |
 
-The difference between visible and hidden performance is deliberate: the official score uses only frames the model did not receive. This is one smoke baseline, not a broad model ranking.
+**Match** is the mean over 175 hidden frames; **final** applies the shared output-token penalty. GPT-5.4 averaged 2,331 output tokens and 8.7 turns. Luna averaged 1,598 output tokens and 3.7 turns. The difference between visible and hidden performance is deliberate: frames shown to the model never contribute to match.
+
+During harness calibration, two earlier GPT-5.4 attempts rendered valid files but reached tighter 8- and 10-turn cutoffs while inspecting frames before submission. SymPy was also missing in the first attempt. Those calibration runs are not included above: SymPy was added, the video limit was fixed at 15 turns, and all six published episodes ran under the resulting contract. This is a small systems baseline, not a broad model ranking.
 
 ## Episode contract
 
@@ -36,7 +55,7 @@ The submission must be an MP4 with exactly one H.264 video stream, the requested
 
 ## What the agent can use
 
-The sandbox exposes `bash`, `write_file`, `read_file`, `read_image`, and `submit_video`. Pillow, aggdraw, NumPy, OpenCV, Matplotlib, scikit-image, and FFmpeg with `libx264` are preinstalled. There is intentionally no special video-inspection tool. To inspect its animation, the agent must use FFmpeg to extract a chosen frame and then open that frame with `read_image`.
+The sandbox exposes `bash`, `write_file`, `read_file`, `read_image`, and `submit_video`. Pillow, aggdraw, NumPy, OpenCV, Matplotlib, scikit-image, SymPy, and FFmpeg with `libx264` are preinstalled. There is intentionally no special video-inspection tool. To inspect its animation, the agent must use FFmpeg to extract a chosen frame and then open that frame with `read_image`.
 
 The container has no network access, 2 GB of RAM, and 2 CPUs. Model API calls remain on the host; only tool calls execute inside Docker.
 

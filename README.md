@@ -12,13 +12,17 @@ MimesisGym is a benchmark for multimodal agents that reconstruct visual referenc
 
 <p align="center"><sub>A difficult natural image at its native 2971×1981 resolution. GPT-5.4 matched 0.3081; GPT-5.6 Luna matched 0.5181.</sub></p>
 
+![An elastic-bounce reference beside low-reasoning reconstructions from GPT-5.4 and GPT-5.6 Luna](docs/assets/video/elastic-bounce-comparison.gif)
+
+<p align="center"><sub>A sparse-frame motion task. GPT-5.4 matched 0.9273 on hidden frames; GPT-5.6 Luna matched 0.9517.</sub></p>
+
 Recognizing the subject is easy. Reconstructing its exact geometry, position, color, texture, and layer order is not. MimesisGym makes that gap visible—and measurable.
 
 ## How it works
 
-1. **Observe** — the agent receives a visual reference at its native resolution.
-2. **Reconstruct** — it writes and runs drawing code in a fresh, isolated workspace.
-3. **Measure** — the submission is scored for local appearance and spatial geometry.
+1. **Observe** — the agent receives an image or sparse timestamped video frames.
+2. **Reconstruct** — it writes and runs rendering code in a fresh, isolated workspace.
+3. **Measure** — the submission is scored for local appearance, spatial geometry, and hidden motion.
 
 Every task starts with a new model context and sandbox. The reference itself never enters the agent's filesystem.
 
