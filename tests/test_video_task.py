@@ -25,6 +25,13 @@ def test_video_sample_contract() -> None:
 def test_bundled_videos_are_h264_and_manifest_hashes_match() -> None:
     root = Path("benchmarks/video/samples/seed_v1")
     manifest = json.loads((root / "manifest.json").read_text())
+    assert [scene["name"] for scene in manifest["scenes"]] == [
+        "elastic-bounce",
+        "constant-horizontal",
+        "gravity-fall",
+        "occluded-crossing",
+        "articulated-motion",
+    ]
     for scene in manifest["scenes"]:
         path = root / scene["video"]
         assert hashlib.sha256(path.read_bytes()).hexdigest() == scene["sha256"]

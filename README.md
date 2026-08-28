@@ -2,7 +2,7 @@
 
 **Can an AI rebuild what it sees—not just describe it?**
 
-MimesisGym is a benchmark for multimodal agents that reconstruct visual references with code. The model sees an image, works inside an isolated sandbox, and submits its own rendering. The result is measured against the original for literal spatial accuracy.
+MimesisGym is a benchmark for multimodal agents that reconstruct visual references with code. The model receives an image or sparse video frames, works inside an isolated sandbox, and submits its own rendering. The result is measured against the original for literal spatial and motion accuracy.
 
 ![An easy house-with-clouds reference beside low-reasoning results from GPT-5.4 and GPT-5.6 Luna](docs/assets/house-model-comparison.png)
 
@@ -12,9 +12,23 @@ MimesisGym is a benchmark for multimodal agents that reconstruct visual referenc
 
 <p align="center"><sub>A difficult natural image at its native 2971×1981 resolution. GPT-5.4 matched 0.3081; GPT-5.6 Luna matched 0.5181.</sub></p>
 
-![An elastic-bounce reference beside low-reasoning reconstructions from GPT-5.4 and GPT-5.6 Luna](docs/assets/video/elastic-bounce-comparison.gif)
+### Easy motion
 
-<p align="center"><sub>A sparse-frame motion task. GPT-5.4 matched 0.9273 on hidden frames; GPT-5.6 Luna matched 0.9517.</sub></p>
+![A constant-motion reference beside low-reasoning reconstructions from GPT-5.4 and GPT-5.6 Luna](docs/assets/video/constant-horizontal-comparison.gif)
+
+<p align="center"><sub>One object, one linear trajectory. GPT-5.4 matched 0.9836 on hidden frames; GPT-5.6 Luna matched 0.9819.</sub></p>
+
+### Medium motion
+
+![An occluded-crossing reference beside low-reasoning reconstructions from GPT-5.4 and GPT-5.6 Luna](docs/assets/video/occluded-crossing-comparison.gif)
+
+<p align="center"><sub>Two trajectories, rotation, and foreground occlusion. GPT-5.4 matched 0.8638; GPT-5.6 Luna matched 0.9227.</sub></p>
+
+### Hard motion
+
+![An articulated-motion reference beside low-reasoning reconstructions from GPT-5.4 and GPT-5.6 Luna](docs/assets/video/articulated-motion-comparison.gif)
+
+<p align="center"><sub>A moving anchor and coupled nonlinear joints. GPT-5.4 matched 0.8128; GPT-5.6 Luna matched 0.8538.</sub></p>
 
 Recognizing the subject is easy. Reconstructing its exact geometry, position, color, texture, and layer order is not. MimesisGym makes that gap visible—and measurable.
 

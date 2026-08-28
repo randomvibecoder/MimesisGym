@@ -48,6 +48,32 @@
       "fps": 60,
       "frame_count": 180,
       "sha256": "f50c9490b68f4f6c436155b125c3406ba3eb6bc66fc90107464a4c983ee98792"
+    },
+    {
+      "name": "occluded-crossing",
+      "display_name": "Occluded crossing",
+      "description": "A circle and rotating square follow independent paths behind a foreground pillar.",
+      "video": "occluded-crossing.mp4",
+      "size": [
+        512,
+        512
+      ],
+      "fps": 60,
+      "frame_count": 180,
+      "sha256": "e9ddd3dd48cccb0e05975a7c305f88b86ced868fbfc0a06a821e15a989ebce1c"
+    },
+    {
+      "name": "articulated-motion",
+      "display_name": "Articulated motion",
+      "description": "A moving anchor drives a two-link mechanism with coupled nonlinear rotations.",
+      "video": "articulated-motion.mp4",
+      "size": [
+        512,
+        512
+      ],
+      "fps": 60,
+      "frame_count": 180,
+      "sha256": "2903dcf2798a1a85ea0092d95e6e6c95e8a5d9cccec785af374a6125db09e158"
     }
   ]
 }

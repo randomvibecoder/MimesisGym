@@ -124,10 +124,10 @@ def _eval_arguments(evaluate: argparse.ArgumentParser, *, video: bool = False) -
     evaluate.add_argument("--disable-thinking", action="store_true")
     evaluate.add_argument("--image", default="mimesisgym-agent:latest")
     evaluate.add_argument("--runs-dir", type=Path, default=Path("runs"))
-    evaluate.add_argument("--max-turns", type=int, default=15 if video else 10)
-    evaluate.add_argument("--max-tool-calls", type=int, default=50 if video else 40)
+    evaluate.add_argument("--max-turns", type=int, default=25 if video else 10)
+    evaluate.add_argument("--max-tool-calls", type=int, default=80 if video else 40)
     evaluate.add_argument("--max-output-tokens", type=int, default=6000)
-    evaluate.add_argument("--max-total-output-tokens", type=int, default=30000 if video else 24000)
+    evaluate.add_argument("--max-total-output-tokens", type=int, default=50000 if video else 24000)
     evaluate.add_argument("--timeout", type=int, default=1200)
     if video:
         evaluate.add_argument("--observation-frames", type=int, default=5)

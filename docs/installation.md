@@ -77,7 +77,7 @@ The compatible adapter uses Chat Completions. The default OpenAI adapter uses th
 
 ## Episode limits
 
-Image defaults are 10 model turns, 40 tool calls, 6,000 output tokens per response, 24,000 total output tokens, and 20 minutes. Video allows 15 turns, 50 tool calls, and 30,000 total output tokens because agents may inspect several extracted frames before submission. Override them with:
+Image defaults are 10 model turns, 40 tool calls, 6,000 output tokens per response, 24,000 total output tokens, and 20 minutes. Video allows 25 turns, 80 tool calls, and 50,000 total output tokens because harder motion tasks may require several render-and-inspect revisions. The 20-minute wall-clock limit and token penalty still discourage runaway episodes. Override them with:
 
 ```text
 --max-turns
