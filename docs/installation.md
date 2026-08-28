@@ -1,6 +1,6 @@
 # Installation and first run
 
-Image v0.1 requires Python 3.12 or newer, Docker, and an API key for the model provider you want to evaluate. Model API requests run on the host; drawing tools run inside an offline Docker container.
+MimesisGym requires Python 3.12 or newer, Docker, and an API key for the model provider you want to evaluate. Model API requests run on the host; rendering tools run inside an offline Docker container.
 
 ## Install
 
@@ -21,7 +21,7 @@ Build the agent environment:
 mimesisgym sandbox build
 ```
 
-The image includes Pillow, aggdraw, NumPy, OpenCV, Matplotlib, and scikit-image, so evaluated agents do not need to install drawing packages.
+The image includes Pillow, aggdraw, NumPy, OpenCV, Matplotlib, scikit-image, and FFmpeg with H.264 encoding, so evaluated agents do not need to install rendering packages.
 
 ## Run your first task
 
@@ -34,6 +34,13 @@ mimesisgym report serve runs/suite-... --port 1638
 ```
 
 Open `http://localhost:1638` to inspect the reference, submission, rewards, token use, errors, and trace.
+
+For a sparse-frame video episode:
+
+```bash
+mimesisgym video samples
+mimesisgym video eval --sample elastic-bounce --reasoning low
+```
 
 ## Choose a reference
 

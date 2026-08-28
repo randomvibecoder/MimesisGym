@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "name": "video_seed_v1",
+  "license": "CC0-1.0",
+  "observation_indices": [
+    0,
+    45,
+    90,
+    134,
+    179
+  ],
+  "scenes": [
+    {
+      "name": "elastic-bounce",
+      "display_name": "Elastic wall bounce",
+      "description": "A ball moves at constant velocity and reflects perfectly from every wall.",
+      "video": "elastic-bounce.mp4",
+      "size": [
+        512,
+        512
+      ],
+      "fps": 60,
+      "frame_count": 180,
+      "sha256": "4210571b5f1ab0ee146cb46931b6bd4af5803048a80d2a597cb7e8de46b99af4"
+    },
+    {
+      "name": "constant-horizontal",
+      "display_name": "Constant horizontal motion",
+      "description": "A ball crosses the canvas left-to-right at constant speed.",
+      "video": "constant-horizontal.mp4",
+      "size": [
+        512,
+        512
+      ],
+      "fps": 60,
+      "frame_count": 180,
+      "sha256": "b16ebefecd1381976e26c128d9911dda4fc4d16dc4e12ddb661d85492e1bdfed"
+    },
+    {
+      "name": "gravity-fall",
+      "display_name": "Gravity-accelerated fall",
+      "description": "A ball falls vertically from rest under constant acceleration.",
+      "video": "gravity-fall.mp4",
+      "size": [
+        512,
+        512
+      ],
+      "fps": 60,
+      "frame_count": 180,
+      "sha256": "f50c9490b68f4f6c436155b125c3406ba3eb6bc66fc90107464a4c983ee98792"
+    }
+  ]
+}

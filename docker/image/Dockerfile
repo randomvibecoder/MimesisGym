@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
     PYTHONUNBUFFERED=1
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends bash coreutils \
+    && apt-get install -y --no-install-recommends bash coreutils ffmpeg \
     && rm -rf /var/lib/apt/lists/* \
     && pip install --no-cache-dir \
        aggdraw \

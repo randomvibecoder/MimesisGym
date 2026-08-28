@@ -27,7 +27,7 @@ Every task starts with a new model context and sandbox. The reference itself nev
 | Track | Challenge | Status |
 | --- | --- | --- |
 | [Image](docs/tracks/image/README.md) | Reconstruct one image at its native resolution. | **Image v0.1 available** |
-| [Video](docs/tracks/video/README.md) | Turn sparse reference frames into a smooth short animation. | Planned |
+| [Video](docs/tracks/video/README.md) | Reconstruct a complete animation from five sparse frames. | **Video v0.1 available** |
 | [3D](docs/tracks/3d/README.md) | Build a 3D asset from several rendered viewpoints. | Planned |
 
 The tracks share one idea: test whether an agent can decompose visual structure and rebuild it precisely, not merely name what it sees.
@@ -36,6 +36,7 @@ The tracks share one idea: test whether an agent can decompose visual structure 
 
 - [Install and run MimesisGym](docs/installation.md)
 - [Learn about the Image benchmark](docs/tracks/image/README.md)
+- [Learn about the Video benchmark](docs/tracks/video/README.md)
 - [Understand the architecture and isolation model](docs/architecture.md)
 
 MimesisGym is an early evaluation environment, not yet an RL training framework. Code is licensed under [Apache-2.0](LICENSE); the bundled procedural sample set is CC0-1.0.

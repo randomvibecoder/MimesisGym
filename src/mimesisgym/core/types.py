@@ -45,6 +45,8 @@ class PreparedTask:
     observations: tuple[tuple[str, str], ...]
     metadata: dict[str, Any]
     reference_path: Path
+    reference_filename: str = "reference.png"
+    submission_filename: str = "submission.png"
 
 
 @dataclass(frozen=True)

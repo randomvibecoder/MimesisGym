@@ -46,6 +46,10 @@ def _latest_workspace_image(directory: Path) -> Path | None:
 def build_report(suite_dir: Path) -> Path:
     suite_dir = suite_dir.resolve()
     suite = json.loads((suite_dir / "suite.json").read_text())
+    if suite.get("track") == "video":
+        from mimesisgym.tracks.video.report import build_video_report
+
+        return build_video_report(suite_dir, suite)
     report_dir, assets = suite_dir / "report", suite_dir / "report" / "assets"
     assets.mkdir(parents=True, exist_ok=True)
     cards = []

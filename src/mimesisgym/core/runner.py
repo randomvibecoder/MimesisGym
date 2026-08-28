@@ -94,7 +94,7 @@ class EvalRunner:
         scorer: Scorer,
     ) -> dict[str, Any]:
         run_dir.mkdir(parents=True)
-        local_reference = run_dir / "reference.png"
+        local_reference = run_dir / task.reference_filename
         shutil.copyfile(task.reference_path, local_reference)
         transcript: list[dict[str, Any]] = []
         started = time.monotonic()
@@ -103,7 +103,7 @@ class EvalRunner:
         tool_calls = 0
         submitted = False
         error: str | None = None
-        submission_path = run_dir / "submission.png"
+        submission_path = run_dir / task.submission_filename
         usage: list[dict[str, Any]] = []
         feedback: list[ToolFeedback] = []
         session = self.provider.create_session(system_prompt=system_prompt, task=task, tools=tools)
@@ -137,7 +137,7 @@ class EvalRunner:
                         }
                     )
                     if not turn.tool_calls:
-                        raise RuntimeError("model stopped without calling a tool or submit_image")
+                        raise RuntimeError("model stopped without calling a tool or submitting an artifact")
                     for call in turn.tool_calls:
                         tool_calls += 1
                         if tool_calls > self.config.max_tool_calls:
@@ -194,7 +194,10 @@ class EvalRunner:
             "task_id": task.task_id,
             "display_name": task.display_name,
             "reference_path": str(local_reference.resolve()),
+            "reference_filename": task.reference_filename,
+            "submission_filename": task.submission_filename,
             "image_size": {"width": task.metadata["width"], "height": task.metadata["height"]},
+            "observation_indices": task.metadata.get("observation_indices"),
             "source": task.metadata.get("source", {}),
             "provider": self.provider.label,
             "model": self.provider.model,
