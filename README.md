@@ -4,11 +4,15 @@
 
 MimesisGym is a benchmark for multimodal agents that reconstruct visual references with code. The model sees an image, works inside an isolated sandbox, and submits its own rendering. The result is measured against the original for literal spatial accuracy.
 
-![A house-with-clouds reference beside low-reasoning results from GPT-5.4 and GPT-5.6 Luna](docs/assets/house-model-comparison.png)
+![An easy house-with-clouds reference beside low-reasoning results from GPT-5.4 and GPT-5.6 Luna](docs/assets/house-model-comparison.png)
 
-<p align="center"><sub>Same 512×512 MS Paint house-with-clouds reference, fresh contexts, identical limits, and low reasoning. Both models submitted in five turns: GPT-5.4 scored 0.7531 and GPT-5.6 Luna scored 0.9030. Both runs used the OpenAI Responses API.</sub></p>
+<p align="center"><sub>An easy geometric task. GPT-5.4 matched 0.7531; GPT-5.6 Luna matched 0.9030.</sub></p>
 
-Recognizing “a house” is easy. Reconstructing the exact roof angle, window position, background boundary, colors, and layer order is not. MimesisGym makes that gap visible—and measurable.
+![A difficult blue-jay reference beside low-reasoning results from GPT-5.4 and GPT-5.6 Luna](docs/assets/blue-jay-model-comparison.png)
+
+<p align="center"><sub>A difficult natural image at its native 2971×1981 resolution. GPT-5.4 matched 0.3081; GPT-5.6 Luna matched 0.5181.</sub></p>
+
+Recognizing the subject is easy. Reconstructing its exact geometry, position, color, texture, and layer order is not. MimesisGym makes that gap visible—and measurable.
 
 ## How it works
 

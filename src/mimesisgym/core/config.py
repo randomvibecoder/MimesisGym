@@ -7,7 +7,7 @@ from pathlib import Path
 @dataclass(frozen=True)
 class SandboxConfig:
     image: str = "mimesisgym-agent:latest"
-    memory: str = "1g"
+    memory: str = "2g"
     cpus: float = 1.0
     pids_limit: int = 64
     command_timeout_seconds: int = 60

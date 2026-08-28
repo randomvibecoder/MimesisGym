@@ -4,6 +4,31 @@
 
 The Image track asks a multimodal agent to recreate one visual reference at its native resolution. It is designed to distinguish semantic recognition from precise visual construction: a submission can contain the correct objects and still score poorly when their coordinates, proportions, colors, boundaries, or layer order are wrong.
 
+## Baseline snapshot
+
+![Five references and their low-reasoning GPT-5.4 and GPT-5.6 Luna reconstructions](../../assets/image-track-baselines.png)
+
+These five illustrative tasks span simple geometry and complex natural images at their native resolutions. Each model received a fresh context and offline container per task, identical limits, and low reasoning through the OpenAI Responses API. Both models submitted all five images.
+
+| Task | Resolution | GPT-5.4 match | GPT-5.4 final | Luna match | Luna final |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| House with clouds | 512×512 | 0.7531 | 0.7282 | **0.9030** | **0.8809** |
+| Blue jay | 2971×1981 | 0.3081 | 0.2094 | **0.5181** | **0.5003** |
+| Artists Palette | 4032×3024 | 0.2006 | 0.0036 | **0.3956** | **0.3589** |
+| Coral reef | 1219×801 | **0.4025** | 0.2601 | 0.3701 | **0.3222** |
+| Monarch butterfly | 5000×3333 | **0.5562** | **0.5019** | 0.3529 | 0.3351 |
+| **Mean** | — | 0.4441 | 0.3407 | **0.5079** | **0.4795** |
+
+**Match** measures reconstruction similarity. **Final** applies token-efficiency and non-submission penalties. The house episodes used 1 GB containers; testing at native photographic resolutions revealed that legitimate image-processing intermediates need more memory, so both models used the new 2 GB default for the four natural-image tasks. These are a small baseline set, not a claim of broad model ranking.
+
+Reference provenance:
+
+- House with clouds: author-drawn for MimesisGym.
+- [Blue jay](https://www.fws.gov/media/blue-jay-0): Mike Carlo/USFWS, public domain.
+- [Artists Palette](https://commons.wikimedia.org/wiki/File:Death_Valley_National_Park_-_HCP_-_October_06,_2022_-_016_-_Artists_Palette.jpg): CC0 1.0.
+- [Coral reef at Pagan](https://commons.wikimedia.org/wiki/File:Sea_fans_coral_reef_Pagan_2022.png): NOAA, public domain.
+- [Monarch butterfly on milkweed](https://commons.wikimedia.org/wiki/File:Monarch_butterfly_on_butterfly_milkweed_(53069280718).jpg): USFWS, public domain.
+
 ## Episode contract
 
 Each reference receives:
