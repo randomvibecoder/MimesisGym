@@ -35,19 +35,19 @@ def _load_panel(path: Path) -> Image.Image:
     return image
 
 
-def build(reference: Path, luna: Path, output: Path, qwen: Path | None = None) -> None:
+def build(reference: Path, gpt54: Path, luna: Path, output: Path) -> None:
     background = "#f4f1e9"
     ink = "#17202a"
     muted = "#66717d"
     border = "#cfcac0"
     canvas = Image.new("RGB", CANVAS, background)
     draw = ImageDraw.Draw(canvas)
-    headings = ("REFERENCE", "QWEN3-VL-32B · GENERATED", "GPT-5.6 LUNA · GENERATED")
-    panels = (_load_panel(reference), _load_panel(qwen) if qwen else None, _load_panel(luna))
+    headings = ("REFERENCE", "GPT-5.4 · LOW REASONING", "GPT-5.6 LUNA · LOW REASONING")
+    panels = (_load_panel(reference), _load_panel(gpt54), _load_panel(luna))
     footers = (
         "Author-drawn MS Paint task",
-        "Visual match 0.2478 · not submitted",
-        "Visual v2 0.9536 · adjusted 0.9389",
+        "Visual v2 0.8707 · adjusted 0.8653",
+        "Visual v2 0.9578 · adjusted 0.9551",
     )
 
     for index, (heading, panel, footer) in enumerate(zip(headings, panels, footers, strict=True)):
@@ -61,15 +61,7 @@ def build(reference: Path, luna: Path, output: Path, qwen: Path | None = None) -
             outline=border,
             width=2,
         )
-        if panel:
-            canvas.paste(panel, (left, IMAGE_TOP))
-        else:
-            draw.rectangle(
-                (left, IMAGE_TOP, left + PANEL_SIZE - 1, IMAGE_TOP + PANEL_SIZE - 1),
-                fill="#e7e3db",
-            )
-            _center(draw, "NO IMAGE CREATED", center, IMAGE_TOP + 212, _font(30, bold=True), ink)
-            _center(draw, "Stopped before a valid tool call", center, IMAGE_TOP + 258, _font(18), muted)
+        canvas.paste(panel, (left, IMAGE_TOP))
         _center(draw, footer, center, 613, _font(17), muted)
 
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -79,11 +71,11 @@ def build(reference: Path, luna: Path, output: Path, qwen: Path | None = None) -
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--reference", type=Path, required=True)
+    parser.add_argument("--gpt54", type=Path, required=True)
     parser.add_argument("--luna", type=Path, required=True)
-    parser.add_argument("--qwen", type=Path)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
-    build(args.reference, args.luna, args.output, args.qwen)
+    build(args.reference, args.gpt54, args.luna, args.output)
 
 
 if __name__ == "__main__":

@@ -4,9 +4,9 @@
 
 MimesisGym is a benchmark for multimodal agents that reconstruct visual references with code. The model sees an image, works inside an isolated sandbox, and submits its own rendering. The result is measured against the original for literal spatial accuracy.
 
-![A house reference beside the results from Qwen3-VL-32B and GPT-5.6 Luna](docs/assets/house-model-comparison.png)
+![A house reference beside low-reasoning results from GPT-5.4 and GPT-5.6 Luna](docs/assets/house-model-comparison.png)
 
-<p align="center"><sub>Same 512×512 MS Paint reference, fresh contexts, identical limits. Qwen3-VL-32B created the shown workspace image but exhausted all 10 turns without submitting; its visual match is 0.2478. GPT-5.6 Luna submitted in four turns and scored 0.9536. Runs used Featherless and OpenAI respectively.</sub></p>
+<p align="center"><sub>Same 512×512 MS Paint reference, fresh contexts, identical limits, and low reasoning. GPT-5.4 submitted in six turns and scored 0.8707; GPT-5.6 Luna submitted in four turns and scored 0.9578. Both runs used the OpenAI Responses API.</sub></p>
 
 Recognizing “a house” is easy. Reconstructing the exact roof angle, window position, background boundary, colors, and layer order is not. MimesisGym makes that gap visible—and measurable.
 
