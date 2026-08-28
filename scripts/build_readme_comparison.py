@@ -42,11 +42,11 @@ def build(reference: Path, luna: Path, output: Path, qwen: Path | None = None) -
     border = "#cfcac0"
     canvas = Image.new("RGB", CANVAS, background)
     draw = ImageDraw.Draw(canvas)
-    headings = ("REFERENCE", "QWEN3.5-9B · GENERATED", "GPT-5.6 LUNA · GENERATED")
+    headings = ("REFERENCE", "QWEN3.5-27B · GENERATED", "GPT-5.6 LUNA · GENERATED")
     panels = (_load_panel(reference), _load_panel(qwen) if qwen else None, _load_panel(luna))
     footers = (
         "Author-drawn MS Paint task",
-        "No valid submission · adjusted −0.3500",
+        "Visual match 0.2655 · not submitted",
         "Visual v2 0.9536 · adjusted 0.9389",
     )
 
