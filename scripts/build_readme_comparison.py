@@ -46,8 +46,8 @@ def build(reference: Path, gpt54: Path, luna: Path, output: Path) -> None:
     panels = (_load_panel(reference), _load_panel(gpt54), _load_panel(luna))
     footers = (
         "Author-drawn MS Paint task",
-        "Visual v2 0.7531 · adjusted 0.7282",
-        "Visual v2 0.9030 · adjusted 0.8809",
+        "Match 0.7531 · final 0.7282",
+        "Match 0.9030 · final 0.8809",
     )
 
     for index, (heading, panel, footer) in enumerate(zip(headings, panels, footers, strict=True)):
