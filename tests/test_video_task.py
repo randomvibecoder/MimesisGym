@@ -7,6 +7,7 @@ from pathlib import Path
 from mimesisgym.tracks.video.media import decode_video
 from mimesisgym.tracks.video.scoring import score_videos
 from mimesisgym.tracks.video.task import load_sample, observation_indices
+from mimesisgym.tracks.video.tools import TOOLS
 
 
 def test_video_sample_contract() -> None:
@@ -18,6 +19,7 @@ def test_video_sample_contract() -> None:
     assert prepared.submission_filename == "submission.mp4"
     assert prepared.metadata["fps"] == [60, 1]
     assert "frame 134 at 2.2333s" in prepared.prompt
+    assert [tool.name for tool in TOOLS] == ["bash", "write_file", "read_file", "read_image", "submit_video"]
 
 
 def test_bundled_videos_are_h264_and_manifest_hashes_match() -> None:

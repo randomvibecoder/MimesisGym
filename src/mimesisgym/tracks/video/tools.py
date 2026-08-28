@@ -6,7 +6,7 @@ from typing import Any
 from mimesisgym.core.types import PreparedTask, ToolExecution, ToolFeedback, ToolSpec
 from mimesisgym.sandbox.base import Sandbox
 
-from .media import contact_sheet, decode_video
+from .media import decode_video
 
 TOOLS = (
     ToolSpec(
@@ -50,16 +50,6 @@ TOOLS = (
         },
     ),
     ToolSpec(
-        "read_video",
-        "Inspect a video's metadata and a six-frame contact sheet.",
-        {
-            "type": "object",
-            "properties": {"path": {"type": "string"}},
-            "required": ["path"],
-            "additionalProperties": False,
-        },
-    ),
-    ToolSpec(
         "submit_video",
         "Validate and submit the final MP4/H.264 video, terminating the episode.",
         {
@@ -93,17 +83,11 @@ class VideoToolDispatcher:
             data = self.sandbox.normalize_image(arguments["path"])
             url = "data:image/png;base64," + base64.b64encode(data).decode("ascii")
             return ToolExecution(ToolFeedback(call_id, f"Image preview: {arguments['path']}", url))
-        if name in {"read_video", "submit_video"}:
+        if name == "submit_video":
             data = self.sandbox.read_file(arguments["path"], limit=100 * 1024 * 1024)
-            info, frames = decode_video(data)
+            info, _ = decode_video(data)
             metadata = self.task.metadata
             description = f"H.264, {info.width}x{info.height}, {float(info.fps):g} fps, {info.frame_count} frames, audio={'yes' if info.has_audio else 'no'}"
-            if name == "read_video":
-                count = min(6, info.frame_count)
-                indices = [round(i * (info.frame_count - 1) / (count - 1)) for i in range(count)] if count > 1 else [0]
-                preview = contact_sheet(frames, indices)
-                url = "data:image/png;base64," + base64.b64encode(preview).decode("ascii")
-                return ToolExecution(ToolFeedback(call_id, f"Video preview: {description}", url))
             expected_fps = metadata["fps"][0] / metadata["fps"][1]
             errors = []
             if (info.width, info.height) != (metadata["width"], metadata["height"]):

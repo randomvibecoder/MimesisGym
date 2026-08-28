@@ -36,7 +36,7 @@ The submission must be an MP4 with exactly one H.264 video stream, the requested
 
 ## What the agent can use
 
-The sandbox exposes `bash`, `write_file`, `read_file`, `read_image`, `read_video`, and `submit_video`. Pillow, aggdraw, NumPy, OpenCV, Matplotlib, scikit-image, and FFmpeg with `libx264` are preinstalled. `read_video` returns metadata and a six-frame contact sheet so the model can inspect its motion before submitting.
+The sandbox exposes `bash`, `write_file`, `read_file`, `read_image`, and `submit_video`. Pillow, aggdraw, NumPy, OpenCV, Matplotlib, scikit-image, and FFmpeg with `libx264` are preinstalled. There is intentionally no special video-inspection tool. To inspect its animation, the agent must use FFmpeg to extract a chosen frame and then open that frame with `read_image`.
 
 The container has no network access, 2 GB of RAM, and 2 CPUs. Model API calls remain on the host; only tool calls execute inside Docker.
 
