@@ -1,0 +1,377 @@
+{
+  "canvas": {
+    "background": "#101935",
+    "mode": "RGB",
+    "size": [
+      480,
+      270
+    ]
+  },
+  "description": "Geometric nighttime skyline with lit windows",
+  "name": "12_night_city",
+  "primitives": [
+    {
+      "bbox": [
+        154,
+        17,
+        158,
+        21
+      ],
+      "fill": "#fff3b0",
+      "type": "ellipse"
+    },
+    {
+      "bbox": [
+        140,
+        112,
+        144,
+        116
+      ],
+      "fill": "#fff3b0",
+      "type": "ellipse"
+    },
+    {
+      "bbox": [
+        394,
+        75,
+        398,
+        79
+      ],
+      "fill": "#fff3b0",
+      "type": "ellipse"
+    },
+    {
+      "bbox": [
+        26,
+        63,
+        30,
+        67
+      ],
+      "fill": "#fff3b0",
+      "type": "ellipse"
+    },
+    {
+      "bbox": [
+        432,
+        16,
+        436,
+        20
+      ],
+      "fill": "#fff3b0",
+      "type": "ellipse"
+    },
+    {
+      "bbox": [
+        381,
+        80,
+        385,
+        84
+      ],
+      "fill": "#fff3b0",
+      "type": "ellipse"
+    },
+    {
+      "bbox": [
+        180,
+        104,
+        184,
+        108
+      ],
+      "fill": "#fff3b0",
+      "type": "ellipse"
+    },
+    {
+      "bbox": [
+        94,
+        55,
+        98,
+        59
+      ],
+      "fill": "#fff3b0",
+      "type": "ellipse"
+    },
+    {
+      "bbox": [
+        273,
+        20,
+        277,
+        24
+      ],
+      "fill": "#fff3b0",
+      "type": "ellipse"
+    },
+    {
+      "bbox": [
+        430,
+        101,
+        434,
+        105
+      ],
+      "fill": "#fff3b0",
+      "type": "ellipse"
+    },
+    {
+      "bbox": [
+        354,
+        17,
+        358,
+        21
+      ],
+      "fill": "#fff3b0",
+      "type": "ellipse"
+    },
+    {
+      "bbox": [
+        78,
+        13,
+        82,
+        17
+      ],
+      "fill": "#fff3b0",
+      "type": "ellipse"
+    },
+    {
+      "bbox": [
+        362,
+        33,
+        366,
+        37
+      ],
+      "fill": "#fff3b0",
+      "type": "ellipse"
+    },
+    {
+      "bbox": [
+        22,
+        110,
+        26,
+        114
+      ],
+      "fill": "#fff3b0",
+      "type": "ellipse"
+    },
+    {
+      "bbox": [
+        372,
+        25,
+        432,
+        85
+      ],
+      "fill": "#ffe66d",
+      "type": "ellipse"
+    },
+    {
+      "bbox": [
+        0,
+        187,
+        104,
+        269
+      ],
+      "fill": "#33415c",
+      "type": "rectangle"
+    },
+    {
+      "bbox": [
+        78,
+        126,
+        196,
+        269
+      ],
+      "fill": "#5c677d",
+      "type": "rectangle"
+    },
+    {
+      "fill": "#3d405b",
+      "points": [
+        [
+          210,
+          269
+        ],
+        [
+          210,
+          91
+        ],
+        [
+          270,
+          47
+        ],
+        [
+          330,
+          91
+        ],
+        [
+          330,
+          269
+        ]
+      ],
+      "type": "polygon"
+    },
+    {
+      "bbox": [
+        347,
+        151,
+        479,
+        269
+      ],
+      "fill": "#495057",
+      "type": "rectangle"
+    },
+    {
+      "bbox": [
+        96,
+        150,
+        114,
+        174
+      ],
+      "fill": "#ffd166",
+      "type": "rectangle"
+    },
+    {
+      "bbox": [
+        132,
+        150,
+        150,
+        174
+      ],
+      "fill": "#ffd166",
+      "type": "rectangle"
+    },
+    {
+      "bbox": [
+        96,
+        190,
+        114,
+        214
+      ],
+      "fill": "#ffd166",
+      "type": "rectangle"
+    },
+    {
+      "bbox": [
+        132,
+        190,
+        150,
+        214
+      ],
+      "fill": "#ffd166",
+      "type": "rectangle"
+    },
+    {
+      "bbox": [
+        234,
+        112,
+        252,
+        136
+      ],
+      "fill": "#ffd166",
+      "type": "rectangle"
+    },
+    {
+      "bbox": [
+        278,
+        112,
+        296,
+        136
+      ],
+      "fill": "#ffd166",
+      "type": "rectangle"
+    },
+    {
+      "bbox": [
+        234,
+        158,
+        252,
+        182
+      ],
+      "fill": "#ffd166",
+      "type": "rectangle"
+    },
+    {
+      "bbox": [
+        278,
+        158,
+        296,
+        182
+      ],
+      "fill": "#ffd166",
+      "type": "rectangle"
+    },
+    {
+      "bbox": [
+        234,
+        204,
+        252,
+        228
+      ],
+      "fill": "#ffd166",
+      "type": "rectangle"
+    },
+    {
+      "bbox": [
+        278,
+        204,
+        296,
+        228
+      ],
+      "fill": "#ffd166",
+      "type": "rectangle"
+    },
+    {
+      "bbox": [
+        371,
+        176,
+        389,
+        200
+      ],
+      "fill": "#ffd166",
+      "type": "rectangle"
+    },
+    {
+      "bbox": [
+        415,
+        176,
+        433,
+        200
+      ],
+      "fill": "#ffd166",
+      "type": "rectangle"
+    },
+    {
+      "bbox": [
+        371,
+        215,
+        389,
+        239
+      ],
+      "fill": "#ffd166",
+      "type": "rectangle"
+    },
+    {
+      "bbox": [
+        415,
+        215,
+        433,
+        239
+      ],
+      "fill": "#ffd166",
+      "type": "rectangle"
+    },
+    {
+      "fill": "#151d2b",
+      "points": [
+        [
+          0,
+          269
+        ],
+        [
+          479,
+          269
+        ]
+      ],
+      "type": "line",
+      "width": 5
+    }
+  ],
+  "schema_version": "mimesisgym.primitive-scene.v1",
+  "seed": 1112
+}

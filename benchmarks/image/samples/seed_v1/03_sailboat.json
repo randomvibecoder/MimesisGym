@@ -1,0 +1,146 @@
+{
+  "canvas": {
+    "background": "#caf0f8",
+    "mode": "RGB",
+    "size": [
+      480,
+      320
+    ]
+  },
+  "description": "Small sailboat on striped blue water",
+  "name": "03_sailboat",
+  "primitives": [
+    {
+      "bbox": [
+        370,
+        28,
+        430,
+        88
+      ],
+      "fill": "#ffe66d",
+      "type": "ellipse"
+    },
+    {
+      "bbox": [
+        0,
+        218,
+        479,
+        319
+      ],
+      "fill": "#4dabf7",
+      "type": "rectangle"
+    },
+    {
+      "fill": "#d7f3ff",
+      "points": [
+        [
+          0,
+          247
+        ],
+        [
+          90,
+          235
+        ],
+        [
+          175,
+          247
+        ],
+        [
+          270,
+          235
+        ],
+        [
+          365,
+          247
+        ],
+        [
+          479,
+          235
+        ]
+      ],
+      "type": "line",
+      "width": 4
+    },
+    {
+      "fill": "#5c4033",
+      "points": [
+        [
+          239,
+          53
+        ],
+        [
+          239,
+          237
+        ]
+      ],
+      "type": "line",
+      "width": 7
+    },
+    {
+      "fill": "#fff8e7",
+      "outline": "#343a40",
+      "points": [
+        [
+          231,
+          66
+        ],
+        [
+          231,
+          205
+        ],
+        [
+          116,
+          205
+        ]
+      ],
+      "type": "polygon",
+      "width": 4
+    },
+    {
+      "fill": "#ff6b6b",
+      "outline": "#343a40",
+      "points": [
+        [
+          247,
+          93
+        ],
+        [
+          247,
+          205
+        ],
+        [
+          341,
+          205
+        ]
+      ],
+      "type": "polygon",
+      "width": 4
+    },
+    {
+      "fill": "#bc6c25",
+      "outline": "#343a40",
+      "points": [
+        [
+          91,
+          210
+        ],
+        [
+          380,
+          210
+        ],
+        [
+          340,
+          270
+        ],
+        [
+          137,
+          270
+        ]
+      ],
+      "type": "polygon",
+      "width": 5
+    }
+  ],
+  "schema_version": "mimesisgym.primitive-scene.v1",
+  "seed": 1103
+}

@@ -1,0 +1,99 @@
+{
+  "canvas": {
+    "background": "#d8f3dc",
+    "mode": "RGB",
+    "size": [
+      256,
+      384
+    ]
+  },
+  "description": "Three-color traffic signal on a post",
+  "name": "05_traffic_light",
+  "primitives": [
+    {
+      "bbox": [
+        0,
+        318,
+        255,
+        383
+      ],
+      "fill": "#adb5bd",
+      "type": "rectangle"
+    },
+    {
+      "fill": "#495057",
+      "points": [
+        [
+          128,
+          255
+        ],
+        [
+          128,
+          340
+        ]
+      ],
+      "type": "line",
+      "width": 14
+    },
+    {
+      "bbox": [
+        64,
+        35,
+        192,
+        272
+      ],
+      "fill": "#343a40",
+      "outline": "#11151c",
+      "type": "rectangle",
+      "width": 7
+    },
+    {
+      "bbox": [
+        88,
+        54,
+        168,
+        134
+      ],
+      "fill": "#ef233c",
+      "outline": "#11151c",
+      "type": "ellipse",
+      "width": 4
+    },
+    {
+      "bbox": [
+        88,
+        137,
+        168,
+        217
+      ],
+      "fill": "#ffd166",
+      "outline": "#11151c",
+      "type": "ellipse",
+      "width": 4
+    },
+    {
+      "bbox": [
+        88,
+        220,
+        168,
+        300
+      ],
+      "fill": "#2dc653",
+      "outline": "#11151c",
+      "type": "ellipse",
+      "width": 4
+    },
+    {
+      "bbox": [
+        80,
+        337,
+        176,
+        356
+      ],
+      "fill": "#495057",
+      "type": "rectangle"
+    }
+  ],
+  "schema_version": "mimesisgym.primitive-scene.v1",
+  "seed": 1105
+}

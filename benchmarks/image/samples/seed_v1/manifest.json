@@ -1,0 +1,167 @@
+{
+  "generator": "scripts/generate_seed_v1.py",
+  "generator_seed": 20260827,
+  "license": "CC0-1.0",
+  "name": "seed_v1",
+  "rendering": "Pillow native-resolution hard-edged RGB primitives; ordered list is back-to-front z-order",
+  "scene_count": 12,
+  "scenes": [
+    {
+      "description": "Layered sunset and triangular hills",
+      "image": "01_sunset_hills.png",
+      "name": "01_sunset_hills",
+      "primitive_count": 5,
+      "scene_spec": "01_sunset_hills.json",
+      "seed": 1101,
+      "sha256": "c6840d898c5e3109ecaca7332015224c29e283c9d9eedd47559251251362d543",
+      "size": [
+        384,
+        256
+      ]
+    },
+    {
+      "description": "Friendly robot assembled from geometric parts",
+      "image": "02_block_robot.png",
+      "name": "02_block_robot",
+      "primitive_count": 14,
+      "scene_spec": "02_block_robot.json",
+      "seed": 1102,
+      "sha256": "975c855616d7bb176e6c0fb6ea0c88da498cd18a4f902f59d02ee7c69b53622d",
+      "size": [
+        300,
+        400
+      ]
+    },
+    {
+      "description": "Small sailboat on striped blue water",
+      "image": "03_sailboat.png",
+      "name": "03_sailboat",
+      "primitive_count": 7,
+      "scene_spec": "03_sailboat.json",
+      "seed": 1103,
+      "sha256": "0615e457969c891456bfc30b03ebcff46d18cf5936b63010476eb1167d4233fd",
+      "size": [
+        480,
+        320
+      ]
+    },
+    {
+      "description": "Seven-petal flower growing from a clay pot",
+      "image": "04_flower_pot.png",
+      "name": "04_flower_pot",
+      "primitive_count": 13,
+      "scene_spec": "04_flower_pot.json",
+      "seed": 1104,
+      "sha256": "bc3f37485c6e51af682d51408e48e0e6286968db0c3d20c273e41fb3cfb85a2b",
+      "size": [
+        360,
+        360
+      ]
+    },
+    {
+      "description": "Three-color traffic signal on a post",
+      "image": "05_traffic_light.png",
+      "name": "05_traffic_light",
+      "primitive_count": 7,
+      "scene_spec": "05_traffic_light.json",
+      "seed": 1105,
+      "sha256": "60761cbca9d68a5aa416f32616e43270b77cbd87d4addff8db11699e44d66986",
+      "size": [
+        256,
+        384
+      ]
+    },
+    {
+      "description": "Simple rocket flying through a dark sky",
+      "image": "06_rocket.png",
+      "name": "06_rocket",
+      "primitive_count": 8,
+      "scene_spec": "06_rocket.json",
+      "seed": 1106,
+      "sha256": "9fe62db28c8a2f0b935791d0db8390ede5f74234d5ccedb83db4c4dc2cdce869",
+      "size": [
+        420,
+        300
+      ]
+    },
+    {
+      "description": "Orange fish and plants in a round bowl",
+      "image": "07_fish_bowl.png",
+      "name": "07_fish_bowl",
+      "primitive_count": 12,
+      "scene_spec": "07_fish_bowl.json",
+      "seed": 1107,
+      "sha256": "773b7f155f9c7ea13461d13d709099145049a0c835dc155513e55fd4300623f6",
+      "size": [
+        400,
+        280
+      ]
+    },
+    {
+      "description": "Colorful toy locomotive and wagon",
+      "image": "08_toy_train.png",
+      "name": "08_toy_train",
+      "primitive_count": 15,
+      "scene_spec": "08_toy_train.json",
+      "seed": 1108,
+      "sha256": "52305644dc8a6523f2729de6f91b5212f2e8d8ddce2559839f7404f4d0f4b134",
+      "size": [
+        512,
+        256
+      ]
+    },
+    {
+      "description": "Overlapping rotated blocks and circle",
+      "image": "09_overlap_blocks.png",
+      "name": "09_overlap_blocks",
+      "primitive_count": 5,
+      "scene_spec": "09_overlap_blocks.json",
+      "seed": 1109,
+      "sha256": "4a660cbb5ba3b65b7cee44353742783e16c4b71edf224e10d1d1568d9272317c",
+      "size": [
+        320,
+        240
+      ]
+    },
+    {
+      "description": "Four-color diamond kite with a bent tail",
+      "image": "10_kite.png",
+      "name": "10_kite",
+      "primitive_count": 8,
+      "scene_spec": "10_kite.json",
+      "seed": 1110,
+      "sha256": "7b4849f226dbb9afae312cc97478aab8edde7af0698e0f0a5a6a9924897eed48",
+      "size": [
+        300,
+        360
+      ]
+    },
+    {
+      "description": "Three-circle snowman with hat and stick arms",
+      "image": "11_snowman.png",
+      "name": "11_snowman",
+      "primitive_count": 16,
+      "scene_spec": "11_snowman.json",
+      "seed": 1111,
+      "sha256": "182f64a73ef932ed8e90c74f6e3532d0daafc8f7885ae02abf2c8045ef9b9ce4",
+      "size": [
+        360,
+        420
+      ]
+    },
+    {
+      "description": "Geometric nighttime skyline with lit windows",
+      "image": "12_night_city.png",
+      "name": "12_night_city",
+      "primitive_count": 34,
+      "scene_spec": "12_night_city.json",
+      "seed": 1112,
+      "sha256": "d1af3912323b332be790a88b66eeb6043ba3bcef23f38d50d4f10b311c709160",
+      "size": [
+        480,
+        270
+      ]
+    }
+  ],
+  "schema_version": "mimesisgym.seed-set.v1"
+}

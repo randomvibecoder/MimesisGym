@@ -1,0 +1,103 @@
+{
+  "canvas": {
+    "background": "#f8f9fa",
+    "mode": "RGB",
+    "size": [
+      320,
+      240
+    ]
+  },
+  "description": "Overlapping rotated blocks and circle",
+  "name": "09_overlap_blocks",
+  "primitives": [
+    {
+      "fill": "#ff595e",
+      "outline": "#3d405b",
+      "points": [
+        [
+          42,
+          188
+        ],
+        [
+          84,
+          48
+        ],
+        [
+          172,
+          72
+        ],
+        [
+          130,
+          212
+        ]
+      ],
+      "type": "polygon",
+      "width": 4
+    },
+    {
+      "bbox": [
+        92,
+        62,
+        244,
+        176
+      ],
+      "fill": "#ffca3a",
+      "outline": "#3d405b",
+      "type": "rectangle",
+      "width": 4
+    },
+    {
+      "bbox": [
+        151,
+        91,
+        291,
+        231
+      ],
+      "fill": "#1982c4",
+      "outline": "#3d405b",
+      "type": "ellipse",
+      "width": 4
+    },
+    {
+      "fill": "#8ac926",
+      "outline": "#3d405b",
+      "points": [
+        [
+          220,
+          35
+        ],
+        [
+          302,
+          76
+        ],
+        [
+          266,
+          147
+        ],
+        [
+          184,
+          106
+        ]
+      ],
+      "type": "polygon",
+      "width": 4
+    },
+    {
+      "fill": "#6a4c93",
+      "points": [
+        [
+          22,
+          218
+        ],
+        [
+          297,
+          22
+        ]
+      ],
+      "type": "line",
+      "width": 10
+    }
+  ],
+  "schema_version": "mimesisgym.primitive-scene.v1",
+  "seed": 1109
+}

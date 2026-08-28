@@ -1,0 +1,206 @@
+{
+  "canvas": {
+    "background": "#edf6f9",
+    "mode": "RGB",
+    "size": [
+      512,
+      256
+    ]
+  },
+  "description": "Colorful toy locomotive and wagon",
+  "name": "08_toy_train",
+  "primitives": [
+    {
+      "bbox": [
+        0,
+        201,
+        511,
+        255
+      ],
+      "fill": "#d9d9d9",
+      "type": "rectangle"
+    },
+    {
+      "fill": "#555555",
+      "points": [
+        [
+          0,
+          218
+        ],
+        [
+          511,
+          218
+        ]
+      ],
+      "type": "line",
+      "width": 5
+    },
+    {
+      "bbox": [
+        66,
+        103,
+        278,
+        198
+      ],
+      "fill": "#ef476f",
+      "outline": "#2b2d42",
+      "type": "rectangle",
+      "width": 5
+    },
+    {
+      "bbox": [
+        199,
+        54,
+        275,
+        104
+      ],
+      "fill": "#ffd166",
+      "outline": "#2b2d42",
+      "type": "rectangle",
+      "width": 5
+    },
+    {
+      "bbox": [
+        211,
+        66,
+        263,
+        102
+      ],
+      "fill": "#8ecae6",
+      "outline": "#2b2d42",
+      "type": "rectangle",
+      "width": 3
+    },
+    {
+      "bbox": [
+        91,
+        68,
+        127,
+        105
+      ],
+      "fill": "#495057",
+      "outline": "#2b2d42",
+      "type": "rectangle",
+      "width": 4
+    },
+    {
+      "fill": "#f78c6b",
+      "outline": "#2b2d42",
+      "points": [
+        [
+          278,
+          128
+        ],
+        [
+          342,
+          157
+        ],
+        [
+          342,
+          198
+        ],
+        [
+          278,
+          198
+        ]
+      ],
+      "type": "polygon",
+      "width": 5
+    },
+    {
+      "fill": "#2b2d42",
+      "points": [
+        [
+          342,
+          184
+        ],
+        [
+          390,
+          184
+        ]
+      ],
+      "type": "line",
+      "width": 7
+    },
+    {
+      "bbox": [
+        390,
+        128,
+        484,
+        198
+      ],
+      "fill": "#06d6a0",
+      "outline": "#2b2d42",
+      "type": "rectangle",
+      "width": 5
+    },
+    {
+      "bbox": [
+        91,
+        176,
+        145,
+        230
+      ],
+      "fill": "#343a40",
+      "outline": "#111111",
+      "type": "ellipse",
+      "width": 3
+    },
+    {
+      "bbox": [
+        209,
+        176,
+        263,
+        230
+      ],
+      "fill": "#343a40",
+      "outline": "#111111",
+      "type": "ellipse",
+      "width": 3
+    },
+    {
+      "bbox": [
+        405,
+        176,
+        455,
+        226
+      ],
+      "fill": "#343a40",
+      "outline": "#111111",
+      "type": "ellipse",
+      "width": 3
+    },
+    {
+      "bbox": [
+        107,
+        192,
+        129,
+        214
+      ],
+      "fill": "#ced4da",
+      "type": "ellipse"
+    },
+    {
+      "bbox": [
+        225,
+        192,
+        247,
+        214
+      ],
+      "fill": "#ced4da",
+      "type": "ellipse"
+    },
+    {
+      "bbox": [
+        419,
+        190,
+        441,
+        212
+      ],
+      "fill": "#ced4da",
+      "type": "ellipse"
+    }
+  ],
+  "schema_version": "mimesisgym.primitive-scene.v1",
+  "seed": 1108
+}

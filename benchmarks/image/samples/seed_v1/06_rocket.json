@@ -1,0 +1,154 @@
+{
+  "canvas": {
+    "background": "#14213d",
+    "mode": "RGB",
+    "size": [
+      420,
+      300
+    ]
+  },
+  "description": "Simple rocket flying through a dark sky",
+  "name": "06_rocket",
+  "primitives": [
+    {
+      "bbox": [
+        48,
+        31,
+        80,
+        63
+      ],
+      "fill": "#ffffff",
+      "type": "ellipse"
+    },
+    {
+      "bbox": [
+        345,
+        54,
+        366,
+        75
+      ],
+      "fill": "#ffffff",
+      "type": "ellipse"
+    },
+    {
+      "bbox": [
+        82,
+        102,
+        98,
+        118
+      ],
+      "fill": "#ffffff",
+      "type": "ellipse"
+    },
+    {
+      "fill": "#f8f9fa",
+      "outline": "#343a40",
+      "points": [
+        [
+          210,
+          29
+        ],
+        [
+          166,
+          108
+        ],
+        [
+          166,
+          224
+        ],
+        [
+          254,
+          224
+        ],
+        [
+          254,
+          108
+        ]
+      ],
+      "type": "polygon",
+      "width": 5
+    },
+    {
+      "fill": "#ff6b6b",
+      "outline": "#343a40",
+      "points": [
+        [
+          166,
+          171
+        ],
+        [
+          124,
+          237
+        ],
+        [
+          166,
+          225
+        ]
+      ],
+      "type": "polygon",
+      "width": 4
+    },
+    {
+      "fill": "#ff6b6b",
+      "outline": "#343a40",
+      "points": [
+        [
+          254,
+          171
+        ],
+        [
+          296,
+          237
+        ],
+        [
+          254,
+          225
+        ]
+      ],
+      "type": "polygon",
+      "width": 4
+    },
+    {
+      "bbox": [
+        184,
+        99,
+        236,
+        151
+      ],
+      "fill": "#74c0fc",
+      "outline": "#343a40",
+      "type": "ellipse",
+      "width": 4
+    },
+    {
+      "fill": "#ff922b",
+      "outline": "#c2410c",
+      "points": [
+        [
+          181,
+          224
+        ],
+        [
+          198,
+          287
+        ],
+        [
+          210,
+          254
+        ],
+        [
+          222,
+          287
+        ],
+        [
+          239,
+          224
+        ]
+      ],
+      "type": "polygon",
+      "width": 3
+    }
+  ],
+  "schema_version": "mimesisgym.primitive-scene.v1",
+  "seed": 1106
+}

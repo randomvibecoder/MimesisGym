@@ -1,0 +1,87 @@
+{
+  "canvas": {
+    "background": "#bde0fe",
+    "mode": "RGB",
+    "size": [
+      384,
+      256
+    ]
+  },
+  "description": "Layered sunset and triangular hills",
+  "name": "01_sunset_hills",
+  "primitives": [
+    {
+      "bbox": [
+        36,
+        30,
+        112,
+        106
+      ],
+      "fill": "#ffd166",
+      "type": "ellipse"
+    },
+    {
+      "fill": "#6a994e",
+      "points": [
+        [
+          0,
+          180
+        ],
+        [
+          92,
+          92
+        ],
+        [
+          181,
+          180
+        ]
+      ],
+      "type": "polygon"
+    },
+    {
+      "fill": "#52796f",
+      "points": [
+        [
+          104,
+          180
+        ],
+        [
+          235,
+          70
+        ],
+        [
+          384,
+          180
+        ]
+      ],
+      "type": "polygon"
+    },
+    {
+      "bbox": [
+        0,
+        180,
+        383,
+        255
+      ],
+      "fill": "#386641",
+      "type": "rectangle"
+    },
+    {
+      "fill": "#a7c957",
+      "points": [
+        [
+          0,
+          204
+        ],
+        [
+          383,
+          204
+        ]
+      ],
+      "type": "line",
+      "width": 6
+    }
+  ],
+  "schema_version": "mimesisgym.primitive-scene.v1",
+  "seed": 1101
+}

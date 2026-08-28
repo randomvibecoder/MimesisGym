@@ -1,0 +1,213 @@
+{
+  "canvas": {
+    "background": "#bde0fe",
+    "mode": "RGB",
+    "size": [
+      360,
+      420
+    ]
+  },
+  "description": "Three-circle snowman with hat and stick arms",
+  "name": "11_snowman",
+  "primitives": [
+    {
+      "bbox": [
+        0,
+        344,
+        359,
+        419
+      ],
+      "fill": "#e7f5ff",
+      "type": "rectangle"
+    },
+    {
+      "bbox": [
+        85,
+        213,
+        275,
+        398
+      ],
+      "fill": "#ffffff",
+      "outline": "#4c6e81",
+      "type": "ellipse",
+      "width": 5
+    },
+    {
+      "bbox": [
+        107,
+        105,
+        253,
+        251
+      ],
+      "fill": "#ffffff",
+      "outline": "#4c6e81",
+      "type": "ellipse",
+      "width": 5
+    },
+    {
+      "bbox": [
+        129,
+        34,
+        231,
+        136
+      ],
+      "fill": "#ffffff",
+      "outline": "#4c6e81",
+      "type": "ellipse",
+      "width": 5
+    },
+    {
+      "bbox": [
+        119,
+        29,
+        241,
+        50
+      ],
+      "fill": "#343a40",
+      "type": "rectangle"
+    },
+    {
+      "bbox": [
+        141,
+        0,
+        219,
+        33
+      ],
+      "fill": "#343a40",
+      "type": "rectangle"
+    },
+    {
+      "bbox": [
+        151,
+        69,
+        163,
+        81
+      ],
+      "fill": "#1f2933",
+      "type": "ellipse"
+    },
+    {
+      "bbox": [
+        197,
+        69,
+        209,
+        81
+      ],
+      "fill": "#1f2933",
+      "type": "ellipse"
+    },
+    {
+      "fill": "#f77f00",
+      "points": [
+        [
+          180,
+          83
+        ],
+        [
+          180,
+          99
+        ],
+        [
+          218,
+          93
+        ]
+      ],
+      "type": "polygon"
+    },
+    {
+      "bbox": [
+        173,
+        164,
+        187,
+        178
+      ],
+      "fill": "#343a40",
+      "type": "ellipse"
+    },
+    {
+      "bbox": [
+        173,
+        199,
+        187,
+        213
+      ],
+      "fill": "#343a40",
+      "type": "ellipse"
+    },
+    {
+      "bbox": [
+        173,
+        264,
+        187,
+        278
+      ],
+      "fill": "#343a40",
+      "type": "ellipse"
+    },
+    {
+      "bbox": [
+        173,
+        305,
+        187,
+        319
+      ],
+      "fill": "#343a40",
+      "type": "ellipse"
+    },
+    {
+      "fill": "#795548",
+      "points": [
+        [
+          112,
+          190
+        ],
+        [
+          52,
+          153
+        ],
+        [
+          28,
+          120
+        ]
+      ],
+      "type": "line",
+      "width": 7
+    },
+    {
+      "fill": "#795548",
+      "points": [
+        [
+          248,
+          190
+        ],
+        [
+          308,
+          149
+        ],
+        [
+          336,
+          111
+        ]
+      ],
+      "type": "line",
+      "width": 7
+    },
+    {
+      "fill": "#d90429",
+      "points": [
+        [
+          117,
+          133
+        ],
+        [
+          244,
+          133
+        ]
+      ],
+      "type": "line",
+      "width": 13
+    }
+  ],
+  "schema_version": "mimesisgym.primitive-scene.v1",
+  "seed": 1111
+}

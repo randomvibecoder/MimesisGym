@@ -1,0 +1,185 @@
+{
+  "canvas": {
+    "background": "#e9f5db",
+    "mode": "RGB",
+    "size": [
+      360,
+      360
+    ]
+  },
+  "description": "Seven-petal flower growing from a clay pot",
+  "name": "04_flower_pot",
+  "primitives": [
+    {
+      "bbox": [
+        0,
+        310,
+        359,
+        359
+      ],
+      "fill": "#b7e4c7",
+      "type": "rectangle"
+    },
+    {
+      "fill": "#2d6a4f",
+      "points": [
+        [
+          180,
+          155
+        ],
+        [
+          180,
+          306
+        ]
+      ],
+      "type": "line",
+      "width": 10
+    },
+    {
+      "bbox": [
+        112,
+        215,
+        179,
+        254
+      ],
+      "fill": "#52b788",
+      "outline": "#2d6a4f",
+      "type": "ellipse",
+      "width": 3
+    },
+    {
+      "bbox": [
+        181,
+        185,
+        254,
+        228
+      ],
+      "fill": "#52b788",
+      "outline": "#2d6a4f",
+      "type": "ellipse",
+      "width": 3
+    },
+    {
+      "bbox": [
+        146,
+        44,
+        214,
+        112
+      ],
+      "fill": "#ff70a6",
+      "outline": "#7d294f",
+      "type": "ellipse",
+      "width": 3
+    },
+    {
+      "bbox": [
+        193,
+        63,
+        261,
+        131
+      ],
+      "fill": "#ff70a6",
+      "outline": "#7d294f",
+      "type": "ellipse",
+      "width": 3
+    },
+    {
+      "bbox": [
+        203,
+        111,
+        271,
+        179
+      ],
+      "fill": "#ff70a6",
+      "outline": "#7d294f",
+      "type": "ellipse",
+      "width": 3
+    },
+    {
+      "bbox": [
+        168,
+        144,
+        236,
+        212
+      ],
+      "fill": "#ff70a6",
+      "outline": "#7d294f",
+      "type": "ellipse",
+      "width": 3
+    },
+    {
+      "bbox": [
+        120,
+        144,
+        188,
+        212
+      ],
+      "fill": "#ff70a6",
+      "outline": "#7d294f",
+      "type": "ellipse",
+      "width": 3
+    },
+    {
+      "bbox": [
+        88,
+        109,
+        156,
+        177
+      ],
+      "fill": "#ff70a6",
+      "outline": "#7d294f",
+      "type": "ellipse",
+      "width": 3
+    },
+    {
+      "bbox": [
+        99,
+        63,
+        167,
+        131
+      ],
+      "fill": "#ff70a6",
+      "outline": "#7d294f",
+      "type": "ellipse",
+      "width": 3
+    },
+    {
+      "bbox": [
+        149,
+        111,
+        211,
+        173
+      ],
+      "fill": "#ffca3a",
+      "outline": "#7d5520",
+      "type": "ellipse",
+      "width": 4
+    },
+    {
+      "fill": "#e76f51",
+      "outline": "#6d392b",
+      "points": [
+        [
+          119,
+          276
+        ],
+        [
+          241,
+          276
+        ],
+        [
+          220,
+          350
+        ],
+        [
+          140,
+          350
+        ]
+      ],
+      "type": "polygon",
+      "width": 5
+    }
+  ],
+  "schema_version": "mimesisgym.primitive-scene.v1",
+  "seed": 1104
+}

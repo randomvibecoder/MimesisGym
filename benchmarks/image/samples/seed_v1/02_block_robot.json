@@ -1,0 +1,192 @@
+{
+  "canvas": {
+    "background": "#f1faee",
+    "mode": "RGB",
+    "size": [
+      300,
+      400
+    ]
+  },
+  "description": "Friendly robot assembled from geometric parts",
+  "name": "02_block_robot",
+  "primitives": [
+    {
+      "fill": "#30343f",
+      "points": [
+        [
+          150,
+          50
+        ],
+        [
+          150,
+          27
+        ]
+      ],
+      "type": "line",
+      "width": 6
+    },
+    {
+      "bbox": [
+        141,
+        14,
+        159,
+        32
+      ],
+      "fill": "#ef476f",
+      "outline": "#30343f",
+      "type": "ellipse",
+      "width": 3
+    },
+    {
+      "bbox": [
+        83,
+        52,
+        217,
+        151
+      ],
+      "fill": "#8ecae6",
+      "outline": "#30343f",
+      "type": "rectangle",
+      "width": 6
+    },
+    {
+      "bbox": [
+        108,
+        79,
+        132,
+        103
+      ],
+      "fill": "#023047",
+      "type": "ellipse"
+    },
+    {
+      "bbox": [
+        168,
+        79,
+        192,
+        103
+      ],
+      "fill": "#023047",
+      "type": "ellipse"
+    },
+    {
+      "fill": "#30343f",
+      "points": [
+        [
+          119,
+          126
+        ],
+        [
+          181,
+          126
+        ]
+      ],
+      "type": "line",
+      "width": 5
+    },
+    {
+      "bbox": [
+        70,
+        158,
+        230,
+        300
+      ],
+      "fill": "#ffb703",
+      "outline": "#30343f",
+      "type": "rectangle",
+      "width": 6
+    },
+    {
+      "bbox": [
+        121,
+        181,
+        179,
+        237
+      ],
+      "fill": "#fb8500",
+      "outline": "#30343f",
+      "type": "rectangle",
+      "width": 4
+    },
+    {
+      "fill": "#30343f",
+      "points": [
+        [
+          70,
+          181
+        ],
+        [
+          32,
+          238
+        ]
+      ],
+      "type": "line",
+      "width": 12
+    },
+    {
+      "fill": "#30343f",
+      "points": [
+        [
+          230,
+          181
+        ],
+        [
+          268,
+          238
+        ]
+      ],
+      "type": "line",
+      "width": 12
+    },
+    {
+      "bbox": [
+        18,
+        226,
+        46,
+        254
+      ],
+      "fill": "#8ecae6",
+      "outline": "#30343f",
+      "type": "ellipse",
+      "width": 4
+    },
+    {
+      "bbox": [
+        254,
+        226,
+        282,
+        254
+      ],
+      "fill": "#8ecae6",
+      "outline": "#30343f",
+      "type": "ellipse",
+      "width": 4
+    },
+    {
+      "bbox": [
+        91,
+        300,
+        132,
+        379
+      ],
+      "fill": "#219ebc",
+      "outline": "#30343f",
+      "type": "rectangle",
+      "width": 5
+    },
+    {
+      "bbox": [
+        168,
+        300,
+        209,
+        379
+      ],
+      "fill": "#219ebc",
+      "outline": "#30343f",
+      "type": "rectangle",
+      "width": 5
+    }
+  ],
+  "schema_version": "mimesisgym.primitive-scene.v1",
+  "seed": 1102
+}

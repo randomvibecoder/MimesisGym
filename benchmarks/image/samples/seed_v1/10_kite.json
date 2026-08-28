@@ -1,0 +1,167 @@
+{
+  "canvas": {
+    "background": "#dff3ff",
+    "mode": "RGB",
+    "size": [
+      300,
+      360
+    ]
+  },
+  "description": "Four-color diamond kite with a bent tail",
+  "name": "10_kite",
+  "primitives": [
+    {
+      "bbox": [
+        28,
+        37,
+        105,
+        70
+      ],
+      "fill": "#ffffff",
+      "outline": "#bfdbf7",
+      "type": "ellipse",
+      "width": 2
+    },
+    {
+      "bbox": [
+        200,
+        61,
+        279,
+        94
+      ],
+      "fill": "#ffffff",
+      "outline": "#bfdbf7",
+      "type": "ellipse",
+      "width": 2
+    },
+    {
+      "fill": "#f72585",
+      "outline": "#3a0ca3",
+      "points": [
+        [
+          154,
+          43
+        ],
+        [
+          224,
+          128
+        ],
+        [
+          154,
+          207
+        ],
+        [
+          84,
+          128
+        ]
+      ],
+      "type": "polygon",
+      "width": 5
+    },
+    {
+      "fill": "#4cc9f0",
+      "points": [
+        [
+          154,
+          43
+        ],
+        [
+          224,
+          128
+        ],
+        [
+          154,
+          128
+        ]
+      ],
+      "type": "polygon"
+    },
+    {
+      "fill": "#ffd166",
+      "points": [
+        [
+          84,
+          128
+        ],
+        [
+          154,
+          207
+        ],
+        [
+          154,
+          128
+        ]
+      ],
+      "type": "polygon"
+    },
+    {
+      "fill": "#3a0ca3",
+      "points": [
+        [
+          154,
+          207
+        ],
+        [
+          176,
+          245
+        ],
+        [
+          144,
+          278
+        ],
+        [
+          181,
+          318
+        ]
+      ],
+      "type": "line",
+      "width": 4
+    },
+    {
+      "fill": "#ff9f1c",
+      "points": [
+        [
+          158,
+          237
+        ],
+        [
+          177,
+          245
+        ],
+        [
+          166,
+          260
+        ],
+        [
+          147,
+          252
+        ]
+      ],
+      "type": "polygon"
+    },
+    {
+      "fill": "#ff9f1c",
+      "points": [
+        [
+          133,
+          270
+        ],
+        [
+          146,
+          279
+        ],
+        [
+          135,
+          292
+        ],
+        [
+          121,
+          282
+        ]
+      ],
+      "type": "polygon"
+    }
+  ],
+  "schema_version": "mimesisgym.primitive-scene.v1",
+  "seed": 1110
+}

@@ -1,0 +1,176 @@
+{
+  "canvas": {
+    "background": "#fff7e6",
+    "mode": "RGB",
+    "size": [
+      400,
+      280
+    ]
+  },
+  "description": "Orange fish and plants in a round bowl",
+  "name": "07_fish_bowl",
+  "primitives": [
+    {
+      "bbox": [
+        51,
+        26,
+        349,
+        267
+      ],
+      "fill": "#bde0fe",
+      "outline": "#426b8a",
+      "type": "ellipse",
+      "width": 6
+    },
+    {
+      "bbox": [
+        56,
+        184,
+        344,
+        261
+      ],
+      "fill": "#64b5d9",
+      "type": "rectangle"
+    },
+    {
+      "fill": "#ff9f1c",
+      "outline": "#633c0d",
+      "points": [
+        [
+          171,
+          147
+        ],
+        [
+          126,
+          116
+        ],
+        [
+          126,
+          177
+        ]
+      ],
+      "type": "polygon",
+      "width": 4
+    },
+    {
+      "bbox": [
+        161,
+        113,
+        263,
+        181
+      ],
+      "fill": "#ffbf69",
+      "outline": "#633c0d",
+      "type": "ellipse",
+      "width": 4
+    },
+    {
+      "bbox": [
+        235,
+        133,
+        247,
+        145
+      ],
+      "fill": "#202020",
+      "type": "ellipse"
+    },
+    {
+      "fill": "#588157",
+      "points": [
+        [
+          95,
+          260
+        ],
+        [
+          124,
+          210
+        ],
+        [
+          153,
+          260
+        ]
+      ],
+      "type": "polygon"
+    },
+    {
+      "fill": "#3a5a40",
+      "points": [
+        [
+          266,
+          260
+        ],
+        [
+          295,
+          202
+        ],
+        [
+          321,
+          260
+        ]
+      ],
+      "type": "polygon"
+    },
+    {
+      "bbox": [
+        306,
+        147,
+        318,
+        159
+      ],
+      "fill": "#e6f7ff",
+      "outline": "#5b91ad",
+      "type": "ellipse",
+      "width": 2
+    },
+    {
+      "bbox": [
+        286,
+        85,
+        306,
+        105
+      ],
+      "fill": "#e6f7ff",
+      "outline": "#5b91ad",
+      "type": "ellipse",
+      "width": 2
+    },
+    {
+      "bbox": [
+        297,
+        135,
+        309,
+        147
+      ],
+      "fill": "#e6f7ff",
+      "outline": "#5b91ad",
+      "type": "ellipse",
+      "width": 2
+    },
+    {
+      "bbox": [
+        291,
+        59,
+        301,
+        69
+      ],
+      "fill": "#e6f7ff",
+      "outline": "#5b91ad",
+      "type": "ellipse",
+      "width": 2
+    },
+    {
+      "bbox": [
+        283,
+        79,
+        301,
+        97
+      ],
+      "fill": "#e6f7ff",
+      "outline": "#5b91ad",
+      "type": "ellipse",
+      "width": 2
+    }
+  ],
+  "schema_version": "mimesisgym.primitive-scene.v1",
+  "seed": 1107
+}
