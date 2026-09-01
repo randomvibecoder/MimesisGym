@@ -21,6 +21,7 @@ from mimesisgym.tracks.image.prompt import SYSTEM_PROMPT
 from mimesisgym.tracks.image.scoring import score_images
 from mimesisgym.tracks.image.task import list_samples, load_manifest, load_reference, load_sample
 from mimesisgym.tracks.image.tools import TOOLS, ImageToolDispatcher
+from mimesisgym.tracks.video import contract as video_contract
 from mimesisgym.tracks.video.prompt import SYSTEM_PROMPT as VIDEO_SYSTEM_PROMPT
 from mimesisgym.tracks.video.scoring import score_videos
 from mimesisgym.tracks.video.task import list_samples as list_video_samples
@@ -99,7 +100,9 @@ def _video_eval(args: argparse.Namespace) -> None:
         max_total_output_tokens=args.max_total_output_tokens,
         episode_timeout_seconds=args.timeout,
         runs_dir=args.runs_dir,
-        sandbox=SandboxConfig(image=args.image, cpus=2.0),
+        sandbox=SandboxConfig(
+            image=args.image, memory=video_contract.SANDBOX_MEMORY, cpus=video_contract.SANDBOX_CPUS
+        ),
     )
     runner = EvalRunner(DockerBackend(), _provider(args, track="video"), config)
     suite = runner.run(
@@ -109,6 +112,7 @@ def _video_eval(args: argparse.Namespace) -> None:
         dispatcher_factory=VideoToolDispatcher,
         scorer=partial(score_videos, observation_count=args.observation_frames),
         track_name="video",
+        contract_id=video_contract.VIDEO_CONTRACT_ID,
     )
     report = build_report(suite)
     print(json.dumps({"suite_dir": str(suite), "report": str(report)}, indent=2))
@@ -124,13 +128,25 @@ def _eval_arguments(evaluate: argparse.ArgumentParser, *, video: bool = False) -
     evaluate.add_argument("--disable-thinking", action="store_true")
     evaluate.add_argument("--image", default="mimesisgym-agent:latest")
     evaluate.add_argument("--runs-dir", type=Path, default=Path("runs"))
-    evaluate.add_argument("--max-turns", type=int, default=25 if video else 10)
-    evaluate.add_argument("--max-tool-calls", type=int, default=80 if video else 40)
-    evaluate.add_argument("--max-output-tokens", type=int, default=6000)
-    evaluate.add_argument("--max-total-output-tokens", type=int, default=50000 if video else 24000)
-    evaluate.add_argument("--timeout", type=int, default=1200)
+    evaluate.add_argument("--max-turns", type=int, default=video_contract.DEFAULT_MAX_TURNS if video else 10)
+    evaluate.add_argument("--max-tool-calls", type=int, default=video_contract.DEFAULT_MAX_TOOL_CALLS if video else 40)
+    evaluate.add_argument(
+        "--max-output-tokens", type=int, default=video_contract.DEFAULT_MAX_OUTPUT_TOKENS if video else 6000
+    )
+    evaluate.add_argument(
+        "--max-total-output-tokens",
+        type=int,
+        default=video_contract.DEFAULT_MAX_TOTAL_OUTPUT_TOKENS if video else 24000,
+    )
+    evaluate.add_argument("--timeout", type=int, default=video_contract.DEFAULT_TIMEOUT_SECONDS if video else 1200)
     if video:
-        evaluate.add_argument("--observation-frames", type=int, default=5)
+        evaluate.add_argument(
+            "--observation-frames",
+            type=int,
+            choices=[video_contract.DEFAULT_OBSERVATION_COUNT],
+            default=video_contract.DEFAULT_OBSERVATION_COUNT,
+            help="Video v0.1 is frozen at five equally spaced observations",
+        )
 
 
 def _parser() -> argparse.ArgumentParser:

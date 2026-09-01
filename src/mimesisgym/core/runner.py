@@ -37,6 +37,7 @@ class EvalRunner:
         dispatcher_factory: DispatcherFactory,
         scorer: Scorer,
         track_name: str = "unknown",
+        contract_id: str | None = None,
     ) -> Path:
         now = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
         suite_dir = self.config.runs_dir / f"suite-{now}-{secrets.token_hex(3)}"
@@ -72,6 +73,8 @@ class EvalRunner:
             else None,
             "episodes": episodes,
         }
+        if contract_id is not None:
+            suite["contract_id"] = contract_id
         (suite_dir / "suite.json").write_text(json.dumps(suite, indent=2))
         return suite_dir
 

@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "contract_id": "mimesisgym.video.v0.1",
+  "contract_version": "0.1",
+  "status": "frozen",
+  "system_prompt": {
+    "file": "system-prompt.txt",
+    "sha256": "8c5b2981723164a5d478cc704bc7da9ec44ca6a1e04e541c9d8a4a48312a7a8e"
+  },
+  "task": {
+    "reference": "one MP4/H.264 video",
+    "observation_count": 5,
+    "observation_sampling": "round(i * (frame_count - 1) / (count - 1)) for i in range(count)",
+    "observation_order": "chronological",
+    "observation_encoding": "decoded RGB frames attached as PNG images",
+    "timestamps": "frame_index / average_fps",
+    "reference_available_in_sandbox": false
+  },
+  "submission": {
+    "container": "MP4",
+    "video_streams": 1,
+    "codec": "H.264",
+    "audio_allowed": false,
+    "must_match_reference": [
+      "width",
+      "height",
+      "average_fps",
+      "decoded_frame_count"
+    ]
+  },
+  "input_limits": {
+    "encoded_bytes": 104857600,
+    "frames": 600,
+    "frame_pixels": 2073600,
+    "fps": 120,
+    "decoded_pixels": 100000000
+  },
+  "episode_defaults": {
+    "turns": 25,
+    "tool_calls": 80,
+    "output_tokens_per_turn": 6000,
+    "total_output_tokens": 50000,
+    "wall_clock_seconds": 1200,
+    "sandbox_memory": "2g",
+    "sandbox_cpus": 2.0,
+    "sandbox_network": "none"
+  },
+  "tools": [
+    "bash",
+    "write_file",
+    "read_file",
+    "read_image",
+    "submit_video"
+  ],
+  "tool_spec_sha256": "328b7fe5340e53b444f5dc530b2b9652331b5dfd5195533469734ddce37bcee6",
+  "scoring": {
+    "official_reward": "mean per-frame similarity over hidden frames only",
+    "observed_frames_excluded": true,
+    "localized_color": {
+      "patch_grid": 16,
+      "worst_fraction": 0.25,
+      "global_error_weight": 0.35,
+      "worst_patch_error_weight": 0.65,
+      "similarity": "exp(-4.0 * weighted_error)"
+    },
+    "structural_similarity": {
+      "metric": "SSIM",
+      "maximum_preview_side": 128,
+      "resize_filter": "bilinear"
+    },
+    "per_frame_similarity": {
+      "localized_color_weight": 0.55,
+      "structural_similarity_weight": 0.45
+    }
+  },
+  "adjusted_reward": {
+    "free_output_tokens": 1000,
+    "penalty_per_1000_excess_tokens": 0.02,
+    "maximum_token_penalty": 0.25,
+    "non_submission_penalty": 0.25
+  },
+  "sample_set": {
+    "manifest": "../samples/seed_v1/manifest.json",
+    "manifest_sha256": "3103fb003ae7543945f7c0464917514df5d32315c44efc8e3d132a213c443c89"
+  },
+  "baselines": "baselines.json",
+  "adversarial_validation": "adversarial-validation.json"
+}

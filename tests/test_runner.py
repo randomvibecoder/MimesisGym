@@ -64,9 +64,11 @@ def test_unified_runner_records_success(tmp_path: Path) -> None:
         tools=TOOLS,
         dispatcher_factory=lambda box, prepared: ImageToolDispatcher(box, (16, 16)),
         scorer=score_images,
+        contract_id="test.contract.v1",
     )
     import json
 
     result = json.loads((suite / "suite.json").read_text())
     assert result["submission_rate"] == 1.0
     assert result["mean_visual_reward"] == 1.0
+    assert result["contract_id"] == "test.contract.v1"

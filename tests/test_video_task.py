@@ -4,6 +4,7 @@ import hashlib
 import json
 from pathlib import Path
 
+from mimesisgym.tracks.video.contract import VIDEO_CONTRACT_ID
 from mimesisgym.tracks.video.media import decode_video
 from mimesisgym.tracks.video.scoring import score_videos
 from mimesisgym.tracks.video.task import load_sample, observation_indices
@@ -18,6 +19,7 @@ def test_video_sample_contract() -> None:
     assert prepared.reference_filename == "reference.mp4"
     assert prepared.submission_filename == "submission.mp4"
     assert prepared.metadata["fps"] == [60, 1]
+    assert prepared.metadata["contract_id"] == VIDEO_CONTRACT_ID
     assert "frame 134 at 2.2333s" in prepared.prompt
     assert [tool.name for tool in TOOLS] == ["bash", "write_file", "read_file", "read_image", "submit_video"]
 

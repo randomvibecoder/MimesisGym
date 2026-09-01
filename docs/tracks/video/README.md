@@ -4,6 +4,8 @@
 
 The Video track asks a multimodal agent to reconstruct a short animation from five timestamped frames. The model must infer what happens between those observations, render the complete sequence with code, and submit a standards-compliant video. This separates recognizing motion from recovering its exact path, speed, collisions, and timing.
 
+Video v0.1 is now a frozen benchmark contract. The normative, machine-readable [contract](../../../benchmarks/video/v0.1/contract.json), [published baselines](../../../benchmarks/video/v0.1/baselines.json), and [adversarial reward validation](../../../benchmarks/video/v0.1/adversarial-validation.json) are versioned together. Any incompatible change to sampling, accepted submissions, tools, limits, or official scoring requires a new version.
+
 ## Baseline snapshot
 
 ### Easy — constant horizontal motion
@@ -75,6 +77,8 @@ Localized color similarity emphasizes the worst quarter of a 16×16 patch grid. 
 
 The official visual reward is the simple mean over the 175 hidden frames. The five observed frames are excluded. Reports show visible-frame, hidden-frame, all-frame, and worst-hidden-frame values separately so interpolation failures are easy to spot. The shared token-efficiency and non-submission penalties are then applied to produce the final reward.
 
+Controlled adversarial checks verify the intended behavior. An exact candidate scores 1.0000; a frozen clip scores 0.4555; repeating only the supplied frames scores 0.7310; shifting motion by four frames scores 0.6069; and reversing layer order scores 0.8376. A candidate with every visible frame exact but every hidden frame wrong retains 1.0000 visible similarity yet receives only 0.0157 official reward. See the [frozen validation record](../../../benchmarks/video/v0.1/adversarial-validation.json) for the fixture and thresholds.
+
 ## Bundled tasks
 
 `video_seed_v1` contains five deterministic CC0 animations:
@@ -101,7 +105,7 @@ You can also evaluate a local H.264 MP4 with `--reference /path/to/video.mp4`. V
 ## Current limitations
 
 - The current tasks test rigid shapes, occlusion, clipping, and articulated motion, but not deformation, camera motion, or realistic scenes.
-- Five evenly spaced observations are the default. Observation count is configurable, but adaptive sampling is not implemented.
+- Video v0.1 is fixed at five evenly spaced observations; adaptive sampling requires a future contract version.
 - The appearance-based reward should be calibrated against human motion judgments before it becomes an RL objective.
 - Input URLs and multi-video manifests are not implemented for Video v0.1; use local files or bundled samples.
 - Docker is not microVM-grade isolation; see the [architecture guide](../../architecture.md).

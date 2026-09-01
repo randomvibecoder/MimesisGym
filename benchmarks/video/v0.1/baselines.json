@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "contract_id": "mimesisgym.video.v0.1",
+  "source_revision": "e502b6b",
+  "provider": "openai-responses",
+  "reasoning_effort": "low",
+  "system_prompt": {
+    "profile": "prefreeze-e502b6b",
+    "file": "baseline-system-prompt.txt",
+    "sha256": "fb64ca263cb123500480f9eff1c9e84bb8298c6056a00585aea45e594b09bcc3"
+  },
+  "limit_profiles": {
+    "simple": {
+      "turns": 15,
+      "tool_calls": 50,
+      "output_tokens_per_turn": 6000,
+      "total_output_tokens": 30000,
+      "wall_clock_seconds": 1200
+    },
+    "current": {
+      "turns": 25,
+      "tool_calls": 80,
+      "output_tokens_per_turn": 6000,
+      "total_output_tokens": 50000,
+      "wall_clock_seconds": 1200
+    }
+  },
+  "results": [
+    {
+      "model": "gpt-5.4",
+      "task": "elastic-bounce",
+      "source_run": "suite-20260828T071510Z-587a43",
+      "limit_profile": "simple",
+      "hidden_frame_similarity": 0.9273120149302947,
+      "observed_frame_similarity": 0.9318455766884728,
+      "adjusted_reward": 0.8970920149302947,
+      "output_tokens": 2511,
+      "turns": 8,
+      "tool_calls": 8,
+      "elapsed_seconds": 51.649763918016106
+    },
+    {
+      "model": "gpt-5.4",
+      "task": "constant-horizontal",
+      "source_run": "suite-20260828T071616Z-a6dead",
+      "limit_profile": "simple",
+      "hidden_frame_similarity": 0.9836090123239715,
+      "observed_frame_similarity": 0.9839639317256477,
+      "adjusted_reward": 0.9646890123239714,
+      "output_tokens": 1946,
+      "turns": 10,
+      "tool_calls": 10,
+      "elapsed_seconds": 69.36254304088652
+    },
+    {
+      "model": "gpt-5.4",
+      "task": "gravity-fall",
+      "source_run": "suite-20260828T071753Z-b36abf",
+      "limit_profile": "simple",
+      "hidden_frame_similarity": 0.9164296225077132,
+      "observed_frame_similarity": 0.9205853628967336,
+      "adjusted_reward": 0.8856896225077132,
+      "output_tokens": 2537,
+      "turns": 8,
+      "tool_calls": 8,
+      "elapsed_seconds": 64.47361102839932
+    },
+    {
+      "model": "gpt-5.4",
+      "task": "occluded-crossing",
+      "source_run": "suite-20260828T080230Z-c13c5a",
+      "limit_profile": "current",
+      "hidden_frame_similarity": 0.8637922711277601,
+      "observed_frame_similarity": 0.8675810219396463,
+      "adjusted_reward": 0.8117522711277602,
+      "output_tokens": 3602,
+      "turns": 10,
+      "tool_calls": 10,
+      "elapsed_seconds": 83.05418205121532
+    },
+    {
+      "model": "gpt-5.4",
+      "task": "articulated-motion",
+      "source_run": "suite-20260828T080605Z-2be1a3",
+      "limit_profile": "current",
+      "hidden_frame_similarity": 0.812845215026405,
+      "observed_frame_similarity": 0.8778971543390164,
+      "adjusted_reward": 0.738325215026405,
+      "output_tokens": 4726,
+      "turns": 12,
+      "tool_calls": 12,
+      "elapsed_seconds": 97.7350808121264
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "task": "elastic-bounce",
+      "source_run": "suite-20260828T072254Z-71bd0f",
+      "limit_profile": "simple",
+      "hidden_frame_similarity": 0.9516882108300849,
+      "observed_frame_similarity": 0.9814392374925017,
+      "adjusted_reward": 0.9379882108300849,
+      "output_tokens": 1685,
+      "turns": 3,
+      "tool_calls": 3,
+      "elapsed_seconds": 51.09210845036432
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "task": "constant-horizontal",
+      "source_run": "suite-20260828T071921Z-f8510f",
+      "limit_profile": "simple",
+      "hidden_frame_similarity": 0.9818530983555894,
+      "observed_frame_similarity": 0.9821635943725122,
+      "adjusted_reward": 0.9716930983555895,
+      "output_tokens": 1508,
+      "turns": 5,
+      "tool_calls": 5,
+      "elapsed_seconds": 69.40390079468489
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "task": "gravity-fall",
+      "source_run": "suite-20260828T072050Z-f318e1",
+      "limit_profile": "simple",
+      "hidden_frame_similarity": 0.9261561152340589,
+      "observed_frame_similarity": 0.9581497716146794,
+      "adjusted_reward": 0.9141361152340589,
+      "output_tokens": 1601,
+      "turns": 3,
+      "tool_calls": 3,
+      "elapsed_seconds": 51.12900102278218
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "task": "occluded-crossing",
+      "source_run": "suite-20260828T080420Z-46cf8b",
+      "limit_profile": "current",
+      "hidden_frame_similarity": 0.9227217918219981,
+      "observed_frame_similarity": 0.9636796957808326,
+      "adjusted_reward": 0.890261791821998,
+      "output_tokens": 2623,
+      "turns": 6,
+      "tool_calls": 6,
+      "elapsed_seconds": 88.21150613669306
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "task": "articulated-motion",
+      "source_run": "suite-20260828T080755Z-470d24",
+      "limit_profile": "current",
+      "hidden_frame_similarity": 0.853788437198032,
+      "observed_frame_similarity": 0.9524310111319239,
+      "adjusted_reward": 0.821908437198032,
+      "output_tokens": 2594,
+      "turns": 7,
+      "tool_calls": 7,
+      "elapsed_seconds": 87.77747975382954
+    }
+  ],
+  "aggregates": [
+    {
+      "model": "gpt-5.4",
+      "tasks": 5,
+      "submission_rate": 1.0,
+      "mean_hidden_frame_similarity": 0.9007976271832289,
+      "mean_adjusted_reward": 0.8595096271832289,
+      "mean_output_tokens": 3064.4,
+      "mean_turns": 9.6
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "tasks": 5,
+      "submission_rate": 1.0,
+      "mean_hidden_frame_similarity": 0.9272415306879527,
+      "mean_adjusted_reward": 0.9071975306879526,
+      "mean_output_tokens": 2002.2,
+      "mean_turns": 4.8
+    }
+  ]
+}

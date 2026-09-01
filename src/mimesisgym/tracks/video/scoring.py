@@ -10,6 +10,17 @@ from skimage.metrics import structural_similarity
 
 from mimesisgym.tracks.image.scoring import _patch_cvar
 
+from .contract import (
+    DEFAULT_OBSERVATION_COUNT,
+    GLOBAL_ERROR_WEIGHT,
+    LOCALIZED_ERROR_WEIGHT,
+    LOCALIZED_EXPONENT,
+    LOCALIZED_SCORE_WEIGHT,
+    PATCH_GRID,
+    PATCH_WORST_FRACTION,
+    STRUCTURAL_PREVIEW_MAX_SIDE,
+    STRUCTURAL_SCORE_WEIGHT,
+)
 from .media import decode_video
 from .task import observation_indices
 
@@ -28,7 +39,9 @@ class VideoScore:
         return asdict(self)
 
 
-def score_videos(reference_path: Path, candidate_path: Path, *, observation_count: int = 5) -> VideoScore:
+def score_videos(
+    reference_path: Path, candidate_path: Path, *, observation_count: int = DEFAULT_OBSERVATION_COUNT
+) -> VideoScore:
     reference_info, reference = decode_video(reference_path)
     candidate_info, candidate = decode_video(candidate_path)
     if candidate_info.has_audio:
@@ -61,10 +74,15 @@ def _frame_similarity(reference: np.ndarray, candidate: np.ndarray) -> float:
     candidate_float = candidate.astype(np.float32) / 255.0
     error = np.mean(np.abs(reference_float - candidate_float), axis=2)
     global_mae = float(error.mean())
-    localized_error = 0.35 * global_mae + 0.65 * _patch_cvar(error)
-    localized = math.exp(-4.0 * localized_error)
-    size = (min(128, reference.shape[1]), min(128, reference.shape[0]))
+    localized_error = GLOBAL_ERROR_WEIGHT * global_mae + LOCALIZED_ERROR_WEIGHT * _patch_cvar(
+        error, grid=PATCH_GRID, worst_fraction=PATCH_WORST_FRACTION
+    )
+    localized = math.exp(-LOCALIZED_EXPONENT * localized_error)
+    size = (
+        min(STRUCTURAL_PREVIEW_MAX_SIDE, reference.shape[1]),
+        min(STRUCTURAL_PREVIEW_MAX_SIDE, reference.shape[0]),
+    )
     reference_small = np.asarray(Image.fromarray(reference).resize(size, Image.Resampling.BILINEAR))
     candidate_small = np.asarray(Image.fromarray(candidate).resize(size, Image.Resampling.BILINEAR))
     structural = float(structural_similarity(reference_small, candidate_small, channel_axis=2, data_range=255))
-    return float(0.55 * localized + 0.45 * structural)
+    return float(LOCALIZED_SCORE_WEIGHT * localized + STRUCTURAL_SCORE_WEIGHT * structural)

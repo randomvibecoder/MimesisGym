@@ -6,6 +6,7 @@ from typing import Any
 from mimesisgym.core.types import PreparedTask, ToolExecution, ToolFeedback, ToolSpec
 from mimesisgym.sandbox.base import Sandbox
 
+from .contract import MAX_VIDEO_BYTES
 from .media import decode_video
 
 TOOLS = (
@@ -84,7 +85,7 @@ class VideoToolDispatcher:
             url = "data:image/png;base64," + base64.b64encode(data).decode("ascii")
             return ToolExecution(ToolFeedback(call_id, f"Image preview: {arguments['path']}", url))
         if name == "submit_video":
-            data = self.sandbox.read_file(arguments["path"], limit=100 * 1024 * 1024)
+            data = self.sandbox.read_file(arguments["path"], limit=MAX_VIDEO_BYTES)
             info, _ = decode_video(data)
             metadata = self.task.metadata
             description = f"H.264, {info.width}x{info.height}, {float(info.fps):g} fps, {info.frame_count} frames, audio={'yes' if info.has_audio else 'no'}"

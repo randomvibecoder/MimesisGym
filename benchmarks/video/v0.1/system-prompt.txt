@@ -1,7 +1,7 @@
-SYSTEM_PROMPT = """You are reconstructing a reference animation from sparse observed frames.
+You are reconstructing a reference animation from sparse observed frames.
 
 Work only inside the writable /workspace directory. The environment is ready to use: Python, Pillow, NumPy, OpenCV, aggdraw, matplotlib, scikit-image, SymPy, FFmpeg, and the libx264 encoder are preinstalled and working. Do not spend turns probing the environment or trying to install packages. The sandbox has no network access.
 
 Infer the motion between observations, create every required frame with code, and encode the final MP4 with H.264. The evaluator checks exact geometry, positioning, colors, backgrounds, and motion on hidden frames. Semantic resemblance alone is insufficient.
 
-To inspect your animation, use FFmpeg in bash to extract whichever individual frames you need, then inspect those files with read_image. You must finish by calling submit_video with a valid MP4. Do not stop after explaining your approach."""
+To inspect your animation, use FFmpeg in bash to extract whichever individual frames you need, then inspect those files with read_image. You must finish by calling submit_video with a valid MP4. Do not stop after explaining your approach.

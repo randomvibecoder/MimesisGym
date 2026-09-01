@@ -55,6 +55,7 @@ The tracks share one idea: test whether an agent can decompose visual structure 
 - [Install and run MimesisGym](docs/installation.md)
 - [Learn about the Image benchmark](docs/tracks/image/README.md)
 - [Learn about the Video benchmark](docs/tracks/video/README.md)
+- [Inspect the frozen Video v0.1 contract](benchmarks/video/v0.1/README.md)
 - [Understand the architecture and isolation model](docs/architecture.md)
 
 MimesisGym is an early evaluation environment, not yet an RL training framework. Code is licensed under [Apache-2.0](LICENSE); the bundled procedural sample set is CC0-1.0.

@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "contract_id": "mimesisgym.video.v0.1",
+  "fixture": {
+    "size": [
+      96,
+      96
+    ],
+    "fps": 16,
+    "frame_count": 32,
+    "observation_indices": [
+      0,
+      8,
+      16,
+      23,
+      31
+    ],
+    "encoding": "lossless H.264 RGB"
+  },
+  "cases": {
+    "identity": {
+      "purpose": "establish the exact-match ceiling",
+      "maximum_hidden_reward": 1.0,
+      "measured_hidden_reward": 1.0
+    },
+    "frozen": {
+      "purpose": "repeat the first reference frame for the entire clip",
+      "maximum_hidden_reward": 0.75,
+      "measured_hidden_reward": 0.455505163875585
+    },
+    "repeated_observations": {
+      "purpose": "replace every hidden frame with its nearest supplied observation",
+      "maximum_hidden_reward": 0.9,
+      "measured_hidden_reward": 0.7310396972456124,
+      "measured_observed_reward": 1.0
+    },
+    "visible_only": {
+      "purpose": "preserve all five observed frames exactly while making every hidden frame wrong",
+      "maximum_hidden_reward": 0.4,
+      "measured_hidden_reward": 0.01565553648024612,
+      "measured_observed_reward": 1.0
+    },
+    "timing_shift": {
+      "purpose": "shift the correct motion four frames earlier with wraparound",
+      "maximum_hidden_reward": 0.85,
+      "measured_hidden_reward": 0.6068638772076075
+    },
+    "wrong_layer_order": {
+      "purpose": "render the same geometry and trajectories with reversed overlap order",
+      "maximum_hidden_reward": 0.98,
+      "measured_hidden_reward": 0.8375521088236165
+    }
+  }
+}

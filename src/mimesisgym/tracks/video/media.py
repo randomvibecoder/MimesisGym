@@ -9,11 +9,7 @@ import av
 import numpy as np
 from PIL import Image, ImageDraw
 
-MAX_VIDEO_BYTES = 100 * 1024 * 1024
-MAX_FRAMES = 600
-MAX_PIXELS = 1920 * 1080
-MAX_FPS = 120
-MAX_DECODED_PIXELS = 100_000_000
+from .contract import MAX_DECODED_PIXELS, MAX_FPS, MAX_FRAME_PIXELS, MAX_FRAMES, MAX_VIDEO_BYTES
 
 
 @dataclass(frozen=True)
@@ -52,7 +48,7 @@ def decode_video(source: Path | bytes, *, require_h264: bool = True) -> tuple[Vi
             codec = stream.codec_context.name
             if require_h264 and codec != "h264":
                 raise ValueError(f"video codec must be H.264, got {codec}")
-            if stream.width * stream.height > MAX_PIXELS:
+            if stream.width * stream.height > MAX_FRAME_PIXELS:
                 raise ValueError("video frames exceed the 1920x1080 pixel limit")
             fps = stream.average_rate
             if fps is None or fps <= 0 or fps > MAX_FPS:

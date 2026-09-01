@@ -8,11 +8,12 @@ from typing import Any
 
 from mimesisgym.core.types import PreparedTask
 
+from .contract import DEFAULT_OBSERVATION_COUNT, MAX_OBSERVATION_COUNT, MIN_OBSERVATION_COUNT, VIDEO_CONTRACT_ID
 from .media import VideoInfo, decode_video, png_data_url
 
 
-def observation_indices(frame_count: int, count: int = 5) -> tuple[int, ...]:
-    if not 2 <= count <= min(12, frame_count):
+def observation_indices(frame_count: int, count: int = DEFAULT_OBSERVATION_COUNT) -> tuple[int, ...]:
+    if not MIN_OBSERVATION_COUNT <= count <= min(MAX_OBSERVATION_COUNT, frame_count):
         raise ValueError("observation frame count must be between 2 and 12 and no larger than the video")
     return tuple(round(i * (frame_count - 1) / (count - 1)) for i in range(count))
 
@@ -51,6 +52,7 @@ class VideoTask:
                 "duration_seconds": info.duration_seconds,
                 "observation_indices": list(indices),
                 "observation_times_seconds": times,
+                "contract_id": VIDEO_CONTRACT_ID,
                 "source": self.source,
             },
             reference_path=self.reference_path,
@@ -64,7 +66,7 @@ def load_reference(
     *,
     task_id: str | None = None,
     display_name: str | None = None,
-    observation_count: int = 5,
+    observation_count: int = DEFAULT_OBSERVATION_COUNT,
     source: dict[str, Any] | None = None,
 ) -> VideoTask:
     path = path.resolve()
@@ -94,7 +96,7 @@ def list_samples() -> list[dict[str, Any]]:
     return list(_manifest()["scenes"])
 
 
-def load_sample(name: str, *, observation_count: int = 5) -> VideoTask:
+def load_sample(name: str, *, observation_count: int = DEFAULT_OBSERVATION_COUNT) -> VideoTask:
     manifest = _manifest()
     for scene in manifest["scenes"]:
         if scene["name"] == name:
