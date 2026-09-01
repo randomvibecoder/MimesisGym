@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "status": "candidate",
+  "license": "CC0-1.0",
+  "scenes": [
+    {
+      "name": "dual-motion",
+      "difficulty": "easy",
+      "description": "An orbiting body and independently oscillating, rotating slider.",
+      "video": "dual-motion.mp4",
+      "size": [
+        320,
+        240
+      ],
+      "fps": 30,
+      "frame_count": 120,
+      "duration_seconds": 4.0,
+      "observation_indices": [
+        0,
+        30,
+        60,
+        89,
+        119
+      ],
+      "sha256": "94611ad3b41738d79694a922f6a1c39382ac0e26b28ea04d147a1d063404fafc"
+    },
+    {
+      "name": "geared-piston",
+      "difficulty": "medium",
+      "description": "A meshed gear pair drives a piston while a conveyor scrolls below.",
+      "video": "geared-piston.mp4",
+      "size": [
+        320,
+        240
+      ],
+      "fps": 30,
+      "frame_count": 120,
+      "duration_seconds": 4.0,
+      "observation_indices": [
+        0,
+        30,
+        60,
+        89,
+        119
+      ],
+      "sha256": "cbc605fb5952603a677490431cfad0169a738f07057792f442e4008361ae585b"
+    },
+    {
+      "name": "walking-robot",
+      "difficulty": "hard",
+      "description": "An articulated robot walks through a scrolling scene with phase-dependent limb depth.",
+      "video": "walking-robot.mp4",
+      "size": [
+        320,
+        240
+      ],
+      "fps": 30,
+      "frame_count": 120,
+      "duration_seconds": 4.0,
+      "observation_indices": [
+        0,
+        30,
+        60,
+        89,
+        119
+      ],
+      "sha256": "bc98401cb0d19b9bb76d826b2921b3534198a0e1d55dca5931d901c799445446"
+    }
+  ]
+}
